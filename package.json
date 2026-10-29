@@ -1,0 +1,16 @@
+{
+  "name": "mary-mediatrix-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mary Mediatrix of All Grace Android App",
+  "scripts": {
+    "build": "echo Preparing Android APK build"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/android": "^7.4.3"
+  }
+}
