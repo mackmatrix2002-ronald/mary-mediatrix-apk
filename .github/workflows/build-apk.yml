@@ -34,6 +34,29 @@ jobs:
       - name: Prepare website files
         shell: bash
         run: |
+          echo "Checking repository files..."
+          pwd
+          ls -la
+
+          echo "Checking required HTML pages..."
+
+          for file in \
+            index.html \
+            rosary.html \
+            individualrosary.html \
+            grourosary.html \
+            novena.html \
+            about.html \
+            gawain.html
+          do
+            if [ -f "$file" ]; then
+              echo "FOUND: $file"
+            else
+              echo "MISSING: $file"
+            fi
+          done
+
+          echo "Preparing web directory..."
           mkdir -p www
 
           for file in \
@@ -46,11 +69,23 @@ jobs:
             gawain.html
           do
             if [ ! -f "$file" ]; then
-              echo "Missing file: $file"
+              echo "ERROR: Missing $file in repository root."
               exit 1
             fi
             cp "$file" www/
           done
+
+          for folder in images mp3; do
+            if [ -d "$folder" ]; then
+              cp -R "$folder" www/
+              echo "Copied folder: $folder"
+            else
+              echo "WARNING: Folder not found: $folder"
+            fi
+          done
+
+          echo "Website files prepared successfully."
+          find www -maxdepth 2 -type f
 
           for folder in images mp3; do
             if [ -d "$folder" ]; then
