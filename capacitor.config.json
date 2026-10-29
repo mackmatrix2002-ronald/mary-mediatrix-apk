@@ -1,0 +1,8 @@
+{
+  "appId": "com.marymediatrix.imus",
+  "appName": "Mary Mediatrix of All Grace",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
