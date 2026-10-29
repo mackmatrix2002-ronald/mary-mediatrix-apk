@@ -1,3 +1,4 @@
+
 name: Build Mary Mediatrix APK
 
 on:
@@ -28,35 +29,22 @@ jobs:
           distribution: temurin
           java-version: "21"
 
+      - name: Check configuration files
+        run: |
+          test -f package.json || { echo "Missing package.json"; exit 1; }
+          test -f capacitor.config.json || { echo "Missing capacitor.config.json"; exit 1; }
+
       - name: Install dependencies
         run: npm install
 
       - name: Prepare website files
         shell: bash
         run: |
-          echo "Checking repository files..."
-          pwd
+          set -eu
+
+          echo "Repository files:"
           ls -la
 
-          echo "Checking required HTML pages..."
-
-          for file in \
-            index.html \
-            rosary.html \
-            individualrosary.html \
-            grouprosary.html \
-            novena.html \
-            about.html \
-            gawain.html
-          do
-            if [ -f "$file" ]; then
-              echo "FOUND: $file"
-            else
-              echo "MISSING: $file"
-            fi
-          done
-
-          echo "Preparing web directory..."
           mkdir -p www
 
           for file in \
@@ -69,29 +57,24 @@ jobs:
             gawain.html
           do
             if [ ! -f "$file" ]; then
-              echo "ERROR: Missing $file in repository root."
+              echo "ERROR: Missing $file in repository root"
               exit 1
             fi
+
             cp "$file" www/
+            echo "Copied $file"
           done
 
           for folder in images mp3; do
             if [ -d "$folder" ]; then
               cp -R "$folder" www/
-              echo "Copied folder: $folder"
+              echo "Copied $folder"
             else
-              echo "WARNING: Folder not found: $folder"
+              echo "WARNING: $folder folder not found"
             fi
           done
 
-          echo "Website files prepared successfully."
-          find www -maxdepth 2 -type f
-
-          for folder in images mp3; do
-            if [ -d "$folder" ]; then
-              cp -R "$folder" www/
-            fi
-          done
+          echo "Website preparation complete."
 
       - name: Add Android platform
         run: npx cap add android
@@ -99,7 +82,7 @@ jobs:
       - name: Sync Android project
         run: npx cap sync android
 
-      - name: Build APK
+      - name: Build debug APK
         run: |
           cd android
           chmod +x gradlew
