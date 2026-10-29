@@ -63,7 +63,7 @@ jobs:
             index.html \
             rosary.html \
             individualrosary.html \
-            grourosary.html \
+            grouprosary.html \
             novena.html \
             about.html \
             gawain.html
