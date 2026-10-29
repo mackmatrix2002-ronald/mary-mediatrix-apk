@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#082b72">
+<meta name="description" content="A responsive bilingual Rosary prayer guide for Our Lady Mary Mediatrix of All Grace — Montefaro Group, Imus Chapter.">
+<title>Rosary Guide | Mary Mediatrix of All Grace</title>
+<style>
+:root{--blue:#082b72;--blue2:#1246a0;--gold:#d9b45b;--gold-light:#f7e8b0;--white:#fff;--ink:#172747;--muted:#65718a;--paper:#f5f8ff;--line:#dce5f4;--shadow:0 14px 38px #09275d18}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}button,a{font:inherit}a{color:inherit}.site-header{background:linear-gradient(130deg,#061c50,var(--blue) 58%,#1749a2);color:#fff;border-bottom:4px solid var(--gold)}.header-inner{max-width:1120px;margin:auto;padding:22px 20px 16px}.brand{display:flex;align-items:center;gap:15px}.emblem{width:66px;height:66px;display:grid;place-items:center;border:2px solid var(--gold);border-radius:50%;color:var(--gold-light);font-size:32px;flex-shrink:0;box-shadow:inset 0 0 0 4px #ffffff12}.brand h1{font-size:clamp(1.25rem,3vw,2rem);line-height:1.2;margin:0;color:#fff}.brand p{margin:5px 0 0;color:#f5e7b5;font-size:.93rem}.nav-row{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}.nav-links{display:flex;gap:7px;flex-wrap:wrap}.nav-links a{color:white;text-decoration:none;padding:8px 12px;border-radius:9px;font-weight:650;font-size:.94rem;transition:background .2s,transform .2s}.nav-links a:hover,.nav-links a:focus-visible{background:#ffffff20;transform:translateY(-2px);outline:1px solid var(--gold)}.lang-toggle{border:1px solid var(--gold);background:#fff;color:var(--blue);border-radius:999px;padding:8px 13px;font-weight:800;cursor:pointer;transition:.2s}.lang-toggle:hover{background:var(--gold-light);transform:translateY(-2px)}main{max-width:1000px;margin:28px auto 60px;padding:0 18px}.hero{text-align:center;padding:28px 18px 26px;background:linear-gradient(145deg,#fff,#edf3ff);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);margin-bottom:22px}.hero .star{font-size:2rem;color:#bd922b}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.76rem;font-weight:800;color:var(--blue2)}h2,h3{color:var(--blue);line-height:1.25}.hero h2{font-size:clamp(1.65rem,4vw,2.35rem);margin:6px 0}.hero p{max-width:690px;margin:8px auto;color:#4c5d7c}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(17px,3vw,27px);box-shadow:var(--shadow);margin:18px 0}.card h2{margin:0 0 10px}.muted{color:var(--muted)}.date-pill{display:inline-block;background:#edf3ff;color:var(--blue);border:1px solid #c9d8f5;border-radius:999px;padding:5px 12px;font-weight:750;font-size:.9rem}.prayer-list{display:grid;gap:10px;margin-top:18px}.prayer-item{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}.prayer-item.active{border-color:var(--gold);box-shadow:0 5px 18px #b78c2420}.prayer-item summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 16px;cursor:pointer;font-weight:750;color:var(--blue)}.prayer-item summary::-webkit-details-marker{display:none}.prayer-item summary:after{content:"＋";color:#9a741d;font-size:1.2rem}.prayer-item[open] summary:after{content:"−"}.prayer-item summary:hover{background:#f5f8ff}.prayer-content{padding:0 17px 17px;border-top:1px solid #edf0f7}.prayer-content p{white-space:pre-line}.prayer-content .role{font-weight:750;color:var(--blue)}.btn{border:0;border-radius:11px;padding:12px 18px;font-weight:800;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;display:inline-flex;justify-content:center;align-items:center;gap:8px;text-decoration:none}.btn:hover{transform:translateY(-2px);box-shadow:0 7px 17px #09275d24}.btn:active{transform:translateY(0)}.btn-primary{background:var(--blue);color:white}.btn-primary:hover{background:var(--blue2)}.btn-gold{background:var(--gold);color:#172747}.btn-outline{background:white;border:1px solid #b8c8e4;color:var(--blue)}.button-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.hidden{display:none!important}.intro{text-align:center;background:linear-gradient(145deg,#fff,#fff9e8);border-color:#e8d59b}.intro .mystery-name{font-size:1.4rem;color:var(--blue);font-weight:850;margin:8px 0}.prayer-stage{text-align:center}.stage-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.progress-track{height:9px;background:#e7edf8;border-radius:99px;overflow:hidden;margin:17px 0}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue2),var(--gold));transition:width .35s}.stage-number{color:var(--muted);font-size:.9rem;font-weight:750}.stage-title{font-size:clamp(1.45rem,4vw,2rem);margin:12px 0}.stage-mystery{color:#9a741d;font-weight:800}.prayer-text{white-space:pre-line;font-size:1.08rem;max-width:760px;margin:20px auto;padding:22px;background:#f6f8fd;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;text-align:left}.bead-controls{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px 0}.bead-count{font-weight:850;color:var(--blue);font-variant-numeric:tabular-nums}.beads{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:16px auto;max-width:520px}.bead{width:14px;height:14px;border:2px solid #b5c4df;border-radius:50%;background:#fff;transition:.2s}.bead.done{background:var(--gold);border-color:#b68a24;transform:scale(1.06)}.notice{background:#f2f6ff;border:1px solid #d9e4fa;padding:13px 15px;border-radius:12px;color:#35496e}.end-message{white-space:pre-line;text-align:left;max-width:680px;margin:20px auto;padding:18px;background:#f7f9ff;border-radius:12px}.site-footer{background:#061c50;color:#f7e8b0;text-align:center;padding:25px 18px;border-top:4px solid var(--gold)}.site-footer p{margin:4px}.site-footer a{color:#fff}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#082b72;color:#fff;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);transition:.25s;z-index:5;max-width:calc(100% - 28px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}:focus-visible{outline:3px solid #d9b45b;outline-offset:3px}
+@media(max-width:600px){.header-inner{padding:17px 14px}.brand{align-items:flex-start}.emblem{width:52px;height:52px;font-size:26px}.nav-row{align-items:stretch}.nav-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%}.nav-links a{text-align:center;padding:8px 4px;font-size:.84rem}.lang-toggle{align-self:flex-start}.hero{padding:23px 14px}.card{padding:17px}.button-row .btn{width:100%}.stage-top{align-items:flex-start}.prayer-text{padding:16px;font-size:1rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="emblem" aria-hidden="true">✧</div>
+      <div>
+        <h1 data-en="Our Lady Mary Mediatrix of All Grace" data-tl="Mahal na Birheng Maria Tagapamagitan ng Lahat ng Biyaya">Our Lady Mary Mediatrix of All Grace</h1>
+        <p data-en="Montefaro Group · Imus Chapter" data-tl="Pangkat Montefaro · Kabanata ng Imus">Montefaro Group · Imus Chapter</p>
+      </div>
+    </div>
+    <div class="nav-row">
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" data-en="Home" data-tl="Tahanan">Home</a>
+        <a href="rosary.html" aria-current="page" data-en="Rosary" data-tl="Rosaryo">Rosary</a>
+        <a href="novena.html" data-en="Novena" data-tl="Nobena">Novena</a>
+        <a href="gawain.html" data-en="Activities" data-tl="Gawain">Activities</a>
+        <a href="about.html" data-en="About" data-tl="Tungkol">About</a>
+      </nav>
+      <button id="languageToggle" class="lang-toggle" type="button" aria-label="Switch language">🇵🇭 Tagalog</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="star" aria-hidden="true">✧ ✦ ✧</div>
+    <div class="eyebrow" data-en="Pray with Mary" data-tl="Manalangin kasama ni Maria">Pray with Mary</div>
+    <h2 data-en="The Holy Rosary" data-tl="Ang Banal na Rosaryo">The Holy Rosary</h2>
+    <p data-en="A prayer guide for our community, offered with faith and devotion to Our Lady Mary Mediatrix of All Grace." data-tl="Gabay sa panalangin para sa ating samahan, na may pananampalataya at debosyon sa Mahal na Birheng Maria Tagapamagitan ng Lahat ng Biyaya.">A prayer guide for our community, offered with faith and devotion to Our Lady Mary Mediatrix of All Grace.</p>
+  </section>
+
+  <section id="prayerGuide" class="card">
+    <div class="stage-top">
+      <div><h2 data-en="Today's prayer guide" data-tl="Gabay sa panalangin ngayong araw">Today's prayer guide</h2><p class="muted" data-en="Choose a section to open it. Opening another section closes the previous one." data-tl="Pumili ng bahagi upang buksan ito. Kapag nagbukas ng iba, awtomatikong magsasara ang nauna.">Choose a section to open it. Opening another section closes the previous one.</p></div>
+      <span class="date-pill" id="todayDate"></span>
+    </div>
+    <div class="notice" id="todayMysteryNotice"></div>
+    <div class="prayer-list" id="prayerList"></div>
+    <div class="button-row"><button id="startToday" class="btn btn-primary" type="button" data-en="✦ Start today's Rosary" data-tl="✦ Simulan ang Rosaryo ngayong araw">✦ Start today's Rosary</button></div>
+  </section>
+
+  <section id="introduction" class="card intro hidden" aria-live="polite">
+    <div class="eyebrow" data-en="Today's reflection" data-tl="Pagninilay ngayong araw">Today's reflection</div>
+    <h2 data-en="Let us pray the Rosary" data-tl="Manalangin tayo ng Rosaryo">Let us pray the Rosary</h2>
+    <div class="mystery-name" id="introMystery"></div>
+    <p id="introMessage"></p>
+    <p class="muted" data-en="Place your intentions in Mary's care, and pray at a peaceful pace." data-tl="Ihabilin kay Maria ang iyong mga kahilingan at manalangin nang may kapanatagan.">Place your intentions in Mary's care, and pray at a peaceful pace.</p>
+    <div class="button-row" style="justify-content:center"><button id="beginPrayer" class="btn btn-gold" type="button" data-en="Begin prayer →" data-tl="Simulan ang panalangin →">Begin prayer →</button><button id="backToGuide" class="btn btn-outline" type="button" data-en="Back to guide" data-tl="Bumalik sa gabay">Back to guide</button></div>
+  </section>
+
+  <section id="prayerSequence" class="card prayer-stage hidden" aria-live="polite">
+    <div class="stage-top"><span class="eyebrow" data-en="Rosary in progress" data-tl="Isinasagawang Rosaryo">Rosary in progress</span><span id="stageNumber" class="stage-number"></span></div>
+    <div class="progress-track" role="progressbar" aria-label="Prayer progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack"><div id="progressFill" class="progress-fill"></div></div>
+    <div id="stageMystery" class="stage-mystery"></div>
+    <h2 id="stageTitle" class="stage-title"></h2>
+    <div id="stageText" class="prayer-text"></div>
+    <div id="beadArea" class="hidden">
+      <div class="bead-controls"><button id="beadPrev" class="btn btn-outline" type="button" aria-label="Previous bead">−</button><span class="bead-count" id="beadCount"></span><button id="beadNext" class="btn btn-gold" type="button" data-en="Pray next bead" data-tl="Ipagdasal ang susunod na butil">Pray next bead</button></div>
+      <div class="beads" id="beads" aria-label="Bead progress"></div>
+      <p class="muted" id="beadHint"></p>
+    </div>
+    <div class="button-row" style="justify-content:center"><button id="nextPrayer" class="btn btn-primary" type="button" data-en="Next prayer →" data-tl="Susunod na panalangin →">Next prayer →</button><button id="quitPrayer" class="btn btn-outline" type="button" data-en="Return to guide" data-tl="Bumalik sa gabay">Return to guide</button></div>
+  </section>
+
+  <section id="endRosary" class="card hidden" aria-live="polite">
+    <div class="eyebrow" data-en="Rosary completed" data-tl="Natapos ang Rosaryo">Rosary completed</div>
+    <h2 data-en="Thank you for praying today" data-tl="Salamat sa pananalangin ngayong araw">Thank you for praying today</h2>
+    <div class="end-message" id="closingPrayers"></div>
+    <p id="completionMessage"></p>
+    <div id="novenaPrompt" class="notice hidden">
+      <p id="novenaPromptText" data-en="Would you like to continue with today's novena?" data-tl="Nais mo bang ipagpatuloy ang nobena ngayong araw?">Would you like to continue with today's novena?</p>
+      <div class="button-row"><button id="acceptNovena" class="btn btn-primary" type="button" data-en="Yes, open Novena" data-tl="Oo, buksan ang Nobena">Yes, open Novena</button><button id="ignoreNovena" class="btn btn-outline" type="button" data-en="Not now" data-tl="Hindi muna">Not now</button></div>
+    </div>
+    <div class="button-row"><button id="endToday" class="btn btn-gold" type="button" data-en="Finish today's Rosary" data-tl="Tapusin ang Rosaryo ngayong araw">Finish today's Rosary</button></div>
+  </section>
+</main>
+<footer class="site-footer">
+  <p><strong data-en="Our Lady Mary Mediatrix of All Grace" data-tl="Mahal na Birheng Maria Tagapamagitan ng Lahat ng Biyaya">Our Lady Mary Mediatrix of All Grace</strong></p>
+  <p data-en="Montefaro Group · Imus Chapter" data-tl="Pangkat Montefaro · Kabanata ng Imus">Montefaro Group · Imus Chapter</p>
+  <p>“<span data-en="Pray for us." data-tl="Ipanalangin mo kami.">Pray for us.</span>”</p>
+</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+let language = localStorage.getItem('rosaryLanguage') || 'en';
+let stageIndex = 0, beadIndex = 0, currentStages = [];
+const dateNow = new Date();
+const dateKey = `${dateNow.getFullYear()}-${String(dateNow.getMonth()+1).padStart(2,'0')}-${String(dateNow.getDate()).padStart(2,'0')}`;
+const mysteries = [
+ {name:{en:'Joyful Mysteries',tl:'Mga Misteryo ng Tuwa'},days:[1,6],items:[
+  {en:'The Annunciation',tl:'Ang Pagbati ng Anghel kay Maria'},
+  {en:'The Visitation',tl:'Ang Pagdalaw ni Maria kay Elisabet'},
+  {en:'The Nativity of Jesus',tl:'Ang Pagsilang ni Hesus'},
+  {en:'The Presentation of Jesus in the Temple',tl:'Ang Paghahandog kay Hesus sa Templo'},
+  {en:'The Finding of Jesus in the Temple',tl:'Ang Pagkakatagpo kay Hesus sa Templo'}]},
+ {name:{en:'Sorrowful Mysteries',tl:'Mga Misteryo ng Hapis'},days:[2,5],items:[
+  {en:'The Agony in the Garden',tl:'Ang Pagdarasal ni Hesus sa Halamanan ng Gethsemane'},
+  {en:'The Scourging at the Pillar',tl:'Ang Pagpapahirap kay Hesus sa Haliging Bato'},
+  {en:'The Crowning with Thorns',tl:'Ang Pagpuputong ng Koronang Tinik'},
+  {en:'The Carrying of the Cross',tl:'Ang Pagpapasan ng Krus'},
+  {en:'The Crucifixion and Death of Jesus',tl:'Ang Pagkakapako at Pagkamatay ni Hesus sa Krus'}]},
+ {name:{en:'Glorious Mysteries',tl:'Mga Misteryo ng Luwalhati'},days:[0,3],items:[
+  {en:'The Resurrection',tl:'Ang Muling Pagkabuhay ni Hesus'},
+  {en:'The Ascension',tl:'Ang Pag-akyat ni Hesus sa Langit'},
+  {en:'The Descent of the Holy Spirit',tl:'Ang Pagbaba ng Espiritu Santo sa mga Apostol'},
+  {en:'The Assumption of Mary',tl:'Ang Pag-aakyat kay Maria sa Langit'},
+  {en:'The Coronation of Mary',tl:'Ang Pagpuputong ng Korona kay Maria bilang Reyna ng langit at lupa'}]},
+ {name:{en:'Luminous Mysteries',tl:'Mga Misteryo ng Liwanag'},days:[4],items:[
+  {en:'The Baptism of Jesus in the Jordan',tl:'Ang Pagbibinyag kay Hesus sa ilog Jordan'},
+  {en:'The Wedding at Cana',tl:'Ang himala sa Kasalan sa Cana'},
+  {en:'The Proclamation of the Kingdom of God',tl:'Ang Pagpapahayag ng Kaharian ng Diyos at pagbabalik loob'},
+  {en:'The Transfiguration',tl:'Ang Pagbabagong-anyo ni Hesus'},
+  {en:'The Institution of the Eucharist',tl:'Ang Pagtatatag ni Hesus ng banal na Eukaristiya'}]}
+];
+const text = {
+ sign:{en:'In the name of the Father, and of the Son, and of the Holy Spirit. Amen.',tl:'Sa ngalan ng Ama, at ng Anak, at ng Espiritu Santo. Amen.'},
+ creed:{en:'I believe in God, the Father almighty, Creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was crucified, died and was buried; he descended into hell; on the third day he rose again from the dead; he ascended into heaven, and is seated at the right hand of God the Father almighty; from there he will come to judge the living and the dead. I believe in the Holy Spirit, the holy catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.',tl:'Sumasampalataya ako sa Diyos Amang makapangyarihan sa lahat, na may gawa ng langit at lupa. Sumasampalataya ako kay Hesukristo, iisang Anak ng Diyos, Panginoon nating lahat. Nagkatawang-tao siya lalang ng Espiritu Santo, ipinanganak ni Santa Mariang Birhen, pinagpakasakit ni Poncio Pilato, ipinako sa krus, namatay at inilibing. Nanaog sa mga yumao; nang ikatlong araw ay nabuhay na mag-uli. Umakyat sa langit at naluluklok sa kanan ng Diyos Amang makapangyarihan sa lahat. Doon magmumula at paririto upang hukuman ang nangabubuhay at nangamatay na tao. Sumasampalataya ako sa Espiritu Santo, sa banal na Simbahang Katolika, sa kasamahan ng mga banal, sa kapatawaran ng mga kasalanan, sa pagkabuhay na muli ng nangamatay na tao at sa buhay na walang hanggan. Amen.'},
+ our1:{en:'Leader\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven.\n\nPeople\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.',tl:'Namumuno\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Ama namin, sumasalangit Ka, sambahin ang ngalan Mo; mapasaamin ang kaharian Mo; sundin ang loob Mo dito sa lupa para nang sa langit.\n\nBayan\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Bigyan Mo kami ngayon ng aming kakanin sa araw-araw; at patawarin Mo kami sa aming mga sala, para nang pagpapatawad namin sa mga nagkakasala sa amin; at huwag Mo kaming ipahintulot sa tukso, at iadya Mo kami sa lahat ng masama. Amen.'},
+ our2:{en:'People\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Our Father, who art in heaven, hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven.\n\nLeader\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Give us this day our daily bread; and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.',tl:'Bayan\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Ama namin, sumasalangit Ka, sambahin ang ngalan Mo; mapasaamin ang kaharian Mo; sundin ang loob Mo dito sa lupa para nang sa langit.\n\nNamumuno\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Bigyan Mo kami ngayon ng aming kakanin sa araw-araw; at patawarin Mo kami sa aming mga sala, para nang pagpapatawad namin sa mga nagkakasala sa amin; at huwag Mo kaming ipahintulot sa tukso, at iadya Mo Mo kami sa lahat ng masama. Amen.'},
+ hail1:{en:'Leader\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Hail, Mary, full of grace, the Lord is with thee. Blessed art thou amongst women and blessed is the fruit of thy womb, Jesus.\n\nPeople\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.',tl:'Namumuno\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Aba, Ginoong Maria, napupuno ka ng grasya, ang Panginoong Diyos ay sumasaiyo. Bukod kang pinagpala sa babaeng lahat, at pinagpala naman ang iyong Anak na si Hesus.\n\nBayan\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Santa Maria, Ina ng Diyos, ipanalangin mo kaming makasalanan, ngayon at kung kami ay mamamatay. Amen.'},
+ hail2:{en:'People\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Hail, Mary, full of grace, the Lord is with thee. Blessed art thou amongst women and blessed is the fruit of thy womb, Jesus.\n\nLeader\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen.',tl:'Bayan\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Aba, Ginoong Maria, napupuno ka ng grasya, ang Panginoong Diyos ay sumasaiyo. Bukod kang pinagpala sa babaeng lahat, at pinagpala naman ang iyong Anak na si Hesus.\n\nNamumuno\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Santa Maria, Ina ng Diyos, ipanalangin mo kaming makasalanan, ngayon at kung kami ay mamamatay. Amen.'},
+ glory1:{en:'Leader\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Glory be to the Father, and to the Son, and to the Holy Spirit.\n\nPeople\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0As it was in the beginning, is now, and ever shall be, world without end. Amen.',tl:'Namumuno\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Luwalhati sa Ama, at sa Anak, at sa Espiritu Santo.\n\nBayan\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Kapara noong unang-una, ngayon at magpakailanman, magpasawalang hanggan. Amen.'},
+ glory2:{en:'People\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Glory be to the Father, and to the Son, and to the Holy Spirit.\n\nLeader\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0As it was in the beginning, is now, and ever shall be, world without end. Amen.',tl:'Bayan\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Luwalhati sa Ama, at sa Anak, at sa Espiritu Santo.\n\nNamumuno\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Kapara noong unang-una, ngayon at magpakailanman, magpasawalang hanggan. Amen.'},
+ fatima:{en:'O my Jesus, forgive us our sins, save us from the fires of hell, lead all souls to heaven, especially those in most need of thy mercy.',tl:'O Hesus ko, patawarin Mo kami sa aming mga sala, iligtas Mo kami sa apoy ng impiyerno, hanguin mo ang mga kaluluwa sa purgatoryo, lalong lalo na ang mga higit na nangangailangan ng Iyong awa.'},
+ hailKing:{en:'Hail, Holy Queen, Mother of Mercy, our life, our sweetness, and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us; and after this our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary.',tl:'Aba Po Santa Mariang Hari, Ina ng Awa, Ikaw ang kabuhayan at katamisan. \nAba pinanaligan ka namin. Ikaw nga po aang tinatawag naming pinapanaw na taong anak ni Eba. Ikaw rin ang pinagbubuntuhang hininga namin ng aming pagtangis, dini sa lupang bayang kahapis-hapis.\nAy Aba, pintakasi ka namin, ilingon mo sa amin ang mga mata mong maawain. At saka kung matapos yaring pagpanaw sa amin ay ipakita mo sa amin ang iyong anak na si Hesus. \n\nSanta Maria, Ina ng Diyos, Maawain, Maalam at matamis na Birhen.'},
+ litany:{en:'Lord,\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Have mercy on us. \nChrist, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Have mercy on us. \nLord, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Have mercy on us. \nChrist, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Hear us. \nChrist, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Graciously hear us.\nGod the Father of heaven, \u00a0\-\u00a0\ Have mercy on us.\nGod the Son, Redeemer of the world, \u00a0\-\u00a0\ Have mercy on us.\nGod the Holy Spirit,\u00a0\-\u00a0 Have mercy on us.\nHoly Trinity, one God, \u00a0\-\u00a0 Have mercy on us.\n\n( Response \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Pray for Us )\nHoly Mary,\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Pray for Us. \nHoly Mother of God, \n Holy Virgin of virgins, \n Mother of Christ, \n Mother of divine grace, \n Mother most pure, \n Mother most chaste, \n Mother inviolate, \n Mother undefiled, \n Mother most amiable, \n Mother of good counsel, \n Mother of our Creator, \n Mother of our Savior,\n Virgin most prudent, \n Virgin most venerable,\n Virgin most renowned, \n Virgin most powerful, \n Virgin most merciful, \n Mirror of justice, \n Seat of wisdom, \n Cause of our joy, \n Spiritual vessel,\n Vessel of honor, \n Singular vessel of devotion, \n Mystical rose, \n Tower of David, \n Tower of ivory, \n House of gold, \n Ark of the covenant, \n Gate of heaven, \n Morning star, \n Health of the sick, \n Refuge of sinners, \n Comforter of the afflicted, \n Help of Christians, \n Queen of angels, \n Queen of patriarchs, \n Queen of prophets, \n Queen of apostles, \n Queen of martyrs, \n Queen of confessors, \n Queen of virgins, \n Queen of all saints, \n Queen conceived without original sin, \n Queen of the most holy Rosary, \n Queen of families, \n Queen of peace, \n\n Lamb of God, who takest away the sins of the world,\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Spare us, O Lord. \nLamb of God, who takest away the sins of the world, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Graciously hear us, O Lord. \nLamb of God, who takest away the sins of the world,\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Have mercy on us.\n\nLEADER: Pray for Us, O holy Mother of God, \n PEOPLE: That we may be made worthy of the promises of Christ. AMEN\n\nLET US PRAY:\n Grant, we beseech thee, O Lord God, that we, your servants, may enjoy perpetual health of mind and body; and by the glorious intercession of the Blessed Mary, ever Virgin, may be delivered from present sorrow and enjoy eternal happiness. Through Christ our Lord. Amen.',tl:'Panginoon, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Maawa Ka sa amin. \nKristo, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Maawa Ka sa amin. \nPanginoon, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Maawa Ka sa amin. \nKristo,\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Pakinggan Mo kami. \nKristo, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Pakapakinggan Mo kami.\nDiyos Ama sa langit,\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Maawa Ka sa amin. \nDiyos Anak, na tumubos sa sanlibutan, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Maawa Ka sa amin. \nDiyos Espiritu Santo, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Maawa Ka sa amin. \nBanal na Trinidad na tatlong iisang Diyos,\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Maawa Ka sa amin.\n\n( Tugon\u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Ipanalangin Mo Kami ) \nSanta Maria, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Ipanalangin mo Kami. \nSantang Ina ng Diyos, \n Santang Birhen ng mga birhen, \n Ina ni Kristo, \n Inang puspos ng biyaya ng Diyos, \n Inang Kalinis-linisan, \n Inang walang kamalay-malay sa kasalanan, \n Inang kasakdal-sakdalan,\n Inang walang bahid,\n Inang kaibig-ibig,\n Inang kahanga-hanga,\n Ina ng mabuting kahatulan,\n Ina ng may likha, \n Ina ng mananakop,\n Ina ng banal na Iglesia, \n Birheng kapaham-pahaman, \n Birheng dapat igalang,\n Birheng lalong dakila, \n Birheng makapangyayari, \n Birheng  maawain, \n Birheng matibay na loob sa magaling, \n Salamin ng katwiran, \n Luklukan ng karunungan, \n Simula ng tuwa namin, \n Sisidlan ng kabanalan, \n Sisidlan ng bunyi at bantog, \n Sisidlang bukod ng mahal na loob na makusaing sumunod sa panginoong Diyos, \n Rosang bulaklak na di mapuspos ang bait ng tao ang halaga, \n Tore ni David, \n Toreng Garing,\n Bahay na Ginto, \n Kaban ng tipan, \n Pintuan ng langit, \n Talang maliwanag, \n Mapagpagaling ng mga may sakit, \n Tanggulan ng mga makasalanan, \n Mapang-aliw sa mga nagdadalamhati, \n Mapang-ampon sa mga kristiyano, \n Reyna ng mga anghel, \n Reyna ng mga Patriyarka,\n Reyna ng mga Propeta,\n Reyna ng mga apostol,\n Reyna ng mga martir, \n Reyna ng mga Confesor, \n Reyna ng mga Birhen,\n Reyna ng lahat ng mga Santo, \n Reynang ipinaglihi na di-nagmana ng salang orihinal,\n Reynang inakyat sa langit,\n Reyna ng kasanto-santuhang rosaryo,\n Reyna ng mga pamilya,\n Reyna ng kapayapaan, Reyna ng Lady Mediatrix,\n\nKordero ng Diyos, na nag-aalis ng mga kasalanan ng SANLIBUTAN, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Patawarin Mo kami, Panginoon namin. \nKordero ng Diyos, na nag-aalis ng mga kasalanan ng SANDAIGDIGAN, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0Pakapakinggan Mo kami, Panginoon namin. \nKordero ng Diyos, na nag-aalis ng mga kasalanan ng SANTINAKPAN, \u00a0\u00a0\u00a0\-\u00a0\u00a0\u00a0 Maawa Ka sa amin.\n\nNAMUMUNO: Ipanalangin mo kami, Santang Ina ng Diyos, \n LAHAT: Nang kami at maging karapat-dapat sa mga pangako ni HesuKristong Panginoon namin. AMEN\n\nMANALANGIN TAYO;\n O Diyos, na ang kaisa-isa mong Anak sa pamamagitan ng kanyang buhay, pagkamatay at pagkabuhay na mag-uli ay ipinagtamo sa amin ang gantimpalang buhay na walang hanggan, ipagkaloob mo po isinasamo namin na sa pagninilay-nilay nitong mga misteryo ng kabanal-banalang Rosaryo ng pinagpalanng Birheng Maria ay matularan namin ang kanilang nilalaman at makamtan namin ang kanilang ipinangangako, alang-alang kay Kristong aming Panginoon. Amen.'}
+};
+const labels = {
+ en:{sign:'Sign of the Cross',creed:"Apostles' Creed",our:'Our Father',hail:'Hail Mary',glory:'Glory Be',fatima:'Fatima Prayer',hailKing:'Hail, Holy Queen',litany:'Litany of the Blessed Virgin Mary',mystery:'Proclaim the mystery',close:'Closing prayers'},
+ tl:{sign:'Tanda ng Krus',creed:'Sumasampalataya (Kredo ng mga Apostol)',our:'Ama Namin',hail:'Aba Ginoong Maria',glory:'Luwalhati',fatima:'Panalangin sa Fatima',hailKing:'Aba Po Santa Mariang Hari',litany:'Litanya ng Mahal na Birheng Maria',mystery:'Ipahayag ang misteryo',close:'Pangwakas na mga panalangin'}
+};
+const getMystery = () => mysteries.find(m=>m.days.includes(dateNow.getDay())) || mysteries[0];
+const currentMystery = getMystery();
+const fmtDate = dateNow.toLocaleDateString(language==='tl'?'fil-PH':'en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+$('todayDate').textContent = fmtDate;
+function tr(en,tl){return language==='tl'?tl:en}
+function showToast(message){const t=$('toast');t.textContent=message;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}
+function applyLanguage(){
+ document.documentElement.lang=language==='tl'?'tl':'en';
+ document.querySelectorAll('[data-en][data-tl]').forEach(el=>{if(el.id!=='languageToggle')el.textContent=el.dataset[language]});
+ $('languageToggle').textContent=language==='en'?'🇵🇭 Tagalog':'🇬🇧 English';
+ $('todayDate').textContent=dateNow.toLocaleDateString(language==='tl'?'fil-PH':'en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+ $('todayMysteryNotice').textContent=tr('Today’s mystery: ','Misteryo ngayong araw: ')+currentMystery.name[language]+'. '+tr('The five mysteries for today are listed below.','Nakalista sa ibaba ang limang misteryo ngayong araw.');
+ renderGuide();
+ if(!$('introduction').classList.contains('hidden'))renderIntro();
+ if(!$('prayerSequence').classList.contains('hidden'))renderStage();
+ if(!$('endRosary').classList.contains('hidden'))renderEnd();
+}
+$('languageToggle').addEventListener('click',()=>{language=language==='en'?'tl':'en';localStorage.setItem('rosaryLanguage',language);applyLanguage()});
+function prayerContent(title,body){return `<p><strong>${title}</strong></p><p>${body}</p>`}
+const guideSections = () => [
+ {title:tr('Today’s Mystery','Ang mga Misteryo Ngayong Araw'),body:currentMystery.items.map((m,i)=>`${i+1}. ${m[language]}`).join('\n')},
+ {title:labels[language].sign,body:text.sign[language]},
+ {title:labels[language].our,body:text.our1[language]},
+ {title:labels[language].hail,body:text.hail1[language]},
+ {title:labels[language].glory,body:text.glory1[language]},
+ {title:labels[language].fatima,body:text.fatima[language]},
+ {title:labels[language].hailKing,body:text.hailKing[language]},
+ {title:labels[language].litany,body:text.litany[language]}
+];
+function renderGuide(){
+ const list=$('prayerList');list.innerHTML='';
+ guideSections().forEach((section,i)=>{const details=document.createElement('details');details.className='prayer-item';const summary=document.createElement('summary');summary.textContent=section.title;const content=document.createElement('div');content.className='prayer-content';const p=document.createElement('p');p.textContent=section.body;content.appendChild(p);details.append(summary,content);details.addEventListener('toggle',()=>{if(details.open){list.querySelectorAll('details').forEach(other=>{if(other!==details)other.open=false});list.querySelectorAll('.prayer-item').forEach(other=>other.classList.toggle('active',other===details))}else details.classList.remove('active')});list.appendChild(details)});
+}
+function renderIntro(){$('introMystery').textContent=currentMystery.name[language];$('introMessage').textContent=tr('As we contemplate the mysteries of '+currentMystery.name.en+', may Mary lead us closer to Jesus. Offer this Rosary for your family, our community, and all who need grace and peace.','Sa pagninilay sa '+currentMystery.name.tl+', nawa’y akayin tayo ni Maria palapit kay Hesus. Ialay ang Rosaryong ito para sa pamilya, sa ating samahan, at sa lahat ng nangangailangan ng biyaya at kapayapaan.')}
+function addStage(title,body,opts={}){currentStages.push({title,body,kind:opts.kind||'text',count:opts.count||0,mystery:opts.mystery||''})}
+function makeStages(){
+ currentStages=[];
+ addStage(labels[language].sign,text.sign[language]);
+ addStage(labels[language].creed,text.creed[language]);
+ addStage(labels[language].our,text.our1[language]);
+ addStage(labels[language].hail,text.hail1[language],{kind:'beads',count:3});
+ addStage(labels[language].glory,text.glory1[language]);
+ currentMystery.items.forEach((m,i)=>{
+  addStage(`${labels[language].mystery} ${i+1}`,m[language],{mystery:`${tr('Mystery','Misteryo')} ${i+1}: ${m[language]}`});
+  addStage(labels[language].our,(i%2===0?text.our1:text.our2)[language]);
+  addStage(labels[language].hail,(i%2===0?text.hail1:text.hail2)[language],{kind:'beads',count:10});
+  addStage(labels[language].glory,(i%2===0?text.glory1:text.glory2)[language]);
+  addStage(labels[language].fatima,text.fatima[language]);
+ });
+ addStage(labels[language].hailKing,text.hailKing[language]);
+ addStage(labels[language].litany,text.litany[language]);
+}
+function renderStage(){
+ const s=currentStages[stageIndex];if(!s)return;
+ $('stageNumber').textContent=tr('Step','Hakbang')+' '+(stageIndex+1)+' / '+currentStages.length;
+ $('stageTitle').textContent=s.title;$('stageText').textContent=s.body;$('stageMystery').textContent=s.mystery||'';
+ const pct=Math.round(stageIndex/currentStages.length*100);$('progressFill').style.width=pct+'%';$('progressTrack').setAttribute('aria-valuenow',pct);
+ const isBeads=s.kind==='beads';$('beadArea').classList.toggle('hidden',!isBeads);$('nextPrayer').classList.toggle('hidden',isBeads);
+ if(isBeads){beadIndex=0;renderBeads();$('beadHint').textContent=tr('Pray each Hail Mary, then tap “Pray next bead” to advance.','Ipagdasal ang bawat Aba Ginoong Maria, pagkatapos ay pindutin ang “Susunod na butil.”')}
+}
+function renderBeads(){
+ const s=currentStages[stageIndex];$('beadCount').textContent=`${tr('Bead','Butil')} ${Math.min(beadIndex+1,s.count)} / ${s.count}`;
+ $('beads').innerHTML=Array.from({length:s.count},(_,i)=>`<span class="bead ${i<beadIndex?'done':''}" aria-hidden="true"></span>`).join('');
+ $('beadPrev').disabled=beadIndex===0;$('beadNext').textContent=beadIndex>=s.count-1?tr('Finish beads ✓','Tapusin ang mga butil ✓'):tr('Pray next bead','Ipagdasal ang susunod na butil');
+}
+$('beadNext').addEventListener('click',()=>{const s=currentStages[stageIndex];if(beadIndex<s.count-1){beadIndex++;renderBeads()}else{stageIndex++;if(stageIndex>=currentStages.length)finishRosary();else renderStage()}});
+$('beadPrev').addEventListener('click',()=>{if(beadIndex>0){beadIndex--;renderBeads()}});
+$('nextPrayer').addEventListener('click',()=>{stageIndex++;if(stageIndex>=currentStages.length)finishRosary();else renderStage()});
+function showOnly(id){['prayerGuide','introduction','prayerSequence','endRosary'].forEach(x=>$(x).classList.toggle('hidden',x!==id));$(id).scrollIntoView({behavior:'smooth',block:'start'})}
+$('startToday').addEventListener('click',()=>{renderIntro();showOnly('introduction')});
+$('beginPrayer').addEventListener('click',()=>{makeStages();stageIndex=0;renderStage();showOnly('prayerSequence')});
+$('backToGuide').addEventListener('click',()=>showOnly('prayerGuide'));
+$('quitPrayer').addEventListener('click',()=>showOnly('prayerGuide'));
+function renderEnd(){
+ $('closingPrayers').textContent=tr('Leader: May the help of the Almighty be with us.\\nPeople: Amen.\\n\\nLeader: May the souls of the departed rest in peace through the grace of the Lord God.\\nPeople: Amen.\\n\\nLeader: May the grace of Almighty God—the Father, the Son, and the Holy Spirit—remain with us.\\nPeople: Amen.','Namumuno: Sumaatin nawa ang tulong ng Makapangyarihan.\\nBayan: Amen.\\n\\nNamumuno: Nawa’y mamahinga sa kapayapaan ang mga kaluluwa ng mga yumao sa pamamagitan ng biyaya ng Panginoong Diyos.\\nBayan: Amen.\\n\\nNamumuno: Nawa’y manatili sa atin ang biyaya ng Makapangyarihang Diyos—Ama, Anak, at Espiritu Santo.\\nBayan: Amen.');
+ const saved=localStorage.getItem('rosaryCompletedDate')===dateKey;
+ $('completionMessage').textContent=saved?tr('Your Rosary completion for today is already saved. May Mary continue to accompany you.','Naitala na ang iyong pagtatapos ng Rosaryo ngayong araw. Nawa’y patuloy kang samahan ni Maria.'):tr('May the grace of Mary Mediatrix of All Grace remain with you throughout the day.','Nawa’y manatili sa iyo sa buong araw ang biyaya ng Mahal na Birheng Maria Tagapamagitan ng Lahat ng Biyaya.');
+ const novenaSaved=localStorage.getItem('novenaCompletedDate')===dateKey;
+ const asked=localStorage.getItem('novenaPromptIgnoredDate')===dateKey;
+ $('novenaPrompt').classList.toggle('hidden',novenaSaved||asked);
+}
+function finishRosary(){localStorage.setItem('rosaryCompletedDate',dateKey);renderEnd();showOnly('endRosary')}
+$('acceptNovena').addEventListener('click',()=>{window.location.href='novena.html'});
+$('ignoreNovena').addEventListener('click',()=>{localStorage.setItem('novenaPromptIgnoredDate',dateKey);showOnly('prayerGuide')});
+$('endToday').addEventListener('click',()=>{showToast(tr('Rosary completed. May God bless you.','Natapos ang Rosaryo. Pagpalain ka nawa ng Diyos.'));showOnly('prayerGuide')});
+applyLanguage();
+})();
+</script>
+</body>
+</html>

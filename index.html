@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2e68">
+<meta name="description" content="A Marian devotional home for Mary, Mediatrix of All Grace — prayer, the Holy Rosary, novena, consecration, and community.">
+<title>Mary, Mediatrix of All Grace | Marian Devotion</title>
+<style>
+:root{--navy:#09285b;--blue:#1456a0;--sky:#eaf4ff;--gold:#c9a44c;--gold-light:#f6e8b6;--white:#fff;--ink:#23334b;--muted:#64748b;--paper:#fbfdff;--shadow:0 18px 45px rgba(9,40,91,.13);--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:var(--paper);line-height:1.7}a{color:var(--blue)}button,a{touch-action:manipulation}.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:white;padding:.7rem;z-index:99}
+header{position:sticky;top:0;z-index:50;background:rgba(9,40,91,.97);backdrop-filter:blur(12px);color:white;border-bottom:2px solid var(--gold)}
+.nav-wrap{max-width:1200px;margin:auto;padding:.65rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{display:flex;align-items:center;gap:.7rem;color:white;text-decoration:none;min-width:0}.brand-mark{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-light);font-size:1.35rem;flex-shrink:0}.brand strong{display:block;font-size:1rem;line-height:1.2}.brand small{display:block;color:#e4d4a1;font: .72rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+nav{display:flex;align-items:center;gap:.25rem}nav a{color:#fff;text-decoration:none;font:600 .88rem Arial,sans-serif;padding:.65rem .7rem;border-radius:10px;transition:background .2s,color .2s}nav a:hover,nav a:focus{background:rgba(255,255,255,.13);color:var(--gold-light)}.menu-toggle{display:none;background:transparent;color:white;border:1px solid #ffffff66;border-radius:10px;padding:.55rem .75rem;font-size:1.15rem}
+.hero{position:relative;overflow:hidden;background:linear-gradient(115deg,rgba(5,28,69,.94),rgba(15,76,139,.84)),radial-gradient(circle at 80% 20%,#76a8d8,transparent 45%);color:white;text-align:center;padding:clamp(4rem,9vw,8rem) 1.2rem 5rem}
+.hero:before,.hero:after{content:"✦";position:absolute;color:#e8d08b;opacity:.35;font-size:8rem}.hero:before{left:5%;top:10%}.hero:after{right:7%;bottom:8%;font-size:5rem}
+.hero-inner{max-width:900px;margin:auto;position:relative;z-index:1}.eyebrow{font:700 .78rem Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light)}h1{font-size:clamp(2.25rem,6vw,4.7rem);line-height:1.08;margin:.8rem 0 1rem;font-weight:500}.hero p{font-size:clamp(1.05rem,2vw,1.3rem);max-width:700px;margin:0 auto 1.6rem;color:#eef5ff}.gold-rule{width:100px;height:2px;background:var(--gold);margin:1.4rem auto}.btn-row{display:flex;justify-content:center;flex-wrap:wrap;gap:.8rem}.btn{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.15rem;border-radius:999px;text-decoration:none;font:700 .92rem Arial,sans-serif;transition:transform .2s,box-shadow .2s;background:var(--gold);color:#17294a;border:1px solid var(--gold)}.btn:hover{transform:translateY(-2px);box-shadow:0 9px 20px #0002}.btn.outline{background:transparent;color:white;border-color:#f4e4ae}
+section{padding:clamp(3rem,6vw,5.2rem) 1.1rem}.container{max-width:1120px;margin:auto}.section-heading{text-align:center;max-width:760px;margin:0 auto 2.2rem}.section-heading h2{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--navy);font-weight:500;line-height:1.2;margin:0 0 .7rem}.section-heading p{margin:0;color:var(--muted)}.section-heading .gold-rule{margin:1rem auto}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}.card{background:white;border:1px solid #dce7f5;border-radius:var(--radius);padding:1.35rem;box-shadow:0 8px 24px #09285b0a;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.card-icon{width:50px;height:50px;border-radius:15px;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-size:1.5rem;margin-bottom:.8rem;border:1px solid #d5e6fa}.card h3{color:var(--navy);font-size:1.3rem;margin:.1rem 0 .45rem}.card p{color:var(--muted);font-size:.96rem;margin:.2rem 0 1rem}.card a{font:700 .9rem Arial,sans-serif;text-decoration:none;margin-top:auto;padding-top:.5rem}.card a:hover{text-decoration:underline}
+.status-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.status{border-radius:var(--radius);padding:1.5rem;background:white;border:1px solid #dce7f5;box-shadow:0 8px 24px #09285b0a}.status h3{color:var(--navy);margin:0 0 .4rem;font-size:1.35rem}.status .big{font-size:1.2rem;color:var(--blue);font-weight:bold}.status small{color:var(--muted);font-family:Arial,sans-serif}.soft{background:linear-gradient(180deg,#eef6ff,#fff)}
+.article{background:white;border:1px solid #e1e9f3;border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1.2rem,4vw,3rem);max-width:900px;margin:auto}.article h3{color:var(--navy);font-size:1.4rem;margin-top:1.6rem}.article p{margin:.7rem 0}.article .note{background:#fff9e8;border-left:4px solid var(--gold);padding:1rem 1.1rem;border-radius:0 12px 12px 0;font-size:.95rem}.source-links{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1rem;font:600 .9rem Arial,sans-serif}
+.prayer-band{background:var(--navy);color:white;text-align:center}.prayer-band h2{color:white}.prayer-band blockquote{max-width:800px;margin:1.4rem auto;font-size:clamp(1.2rem,3vw,1.7rem);font-style:italic}.prayer-band p{color:#e2edff}.prayer-band .gold-rule{margin:1rem auto}
+footer{background:#061c42;color:#eaf2ff;padding:3rem 1.1rem 1.2rem;border-top:3px solid var(--gold)}.footer-grid{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem}.footer-grid h3{color:var(--gold-light);margin-top:0}.footer-grid p,.footer-grid a{color:#d8e5f8}.footer-grid ul{padding-left:1.2rem;margin:0}.footer-grid li{margin:.35rem 0}.footer-bottom{max-width:1120px;margin:2rem auto 0;padding-top:1rem;border-top:1px solid #ffffff2b;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font: .85rem Arial,sans-serif;color:#bacce6}.social{display:flex;flex-wrap:wrap;gap:.6rem}.social a{display:inline-block;border:1px solid #ffffff50;border-radius:999px;padding:.55rem .85rem;text-decoration:none;font:600 .88rem Arial,sans-serif}.social a:hover{background:#ffffff18}
+.messenger-float{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:.5rem;background:#0879e8;color:white;border-radius:999px;padding:.75rem 1rem;text-decoration:none;font:700 .9rem Arial,sans-serif;box-shadow:0 8px 22px #001b3b40}.messenger-float span{font-size:1.2rem}
+.backtop{position:fixed;right:22px;bottom:82px;display:none;border:0;border-radius:50%;width:42px;height:42px;background:var(--gold);color:#13284c;font-size:1.2rem;cursor:pointer;z-index:55}.backtop.show{display:block}
+@media(max-width:950px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}nav{gap:0}nav a{padding:.6rem .45rem;font-size:.8rem}.brand strong{font-size:.9rem}}
+@media(max-width:720px){.nav-wrap{flex-wrap:wrap}.menu-toggle{display:block;margin-left:auto}nav{display:none;order:3;width:100%;flex-direction:column;align-items:stretch;padding:.4rem 0 .6rem}nav.open{display:flex}nav a{padding:.8rem;border-radius:8px;font-size:.95rem}.brand{max-width:calc(100% - 60px)}.status-grid,.footer-grid{grid-template-columns:1fr}.hero:before{left:-2rem}.hero:after{right:-1rem}.messenger-float{right:12px;bottom:12px;padding:.65rem .85rem}}
+@media(max-width:440px){.cards{grid-template-columns:1fr}.card{padding:1.2rem}.brand-mark{width:38px;height:38px}.brand small{font-size:.62rem}.hero{padding-top:4rem}.btn{width:100%;max-width:300px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="Mary Mediatrix of All Grace home">
+      <span class="brand-mark" aria-hidden="true">✧</span>
+      <span><strong>Mary, Mediatrix of All Grace</strong><small>A Marian Devotional Guide</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">☰</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="rosary.html">Holy Rosary</a>
+      <a href="novena.html">Novena</a>
+      <a href="consecration.html">Consecration</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow">With Jesus, through Mary</div>
+    <h1>Mary, Mediatrix<br>of All Grace</h1>
+    <div class="gold-rule"></div>
+    <p>A place for prayer, reflection, and Marian devotion. May the example of the Blessed Virgin Mary lead every heart closer to Jesus Christ, our Lord and Savior.</p>
+    <div class="btn-row">
+      <a class="btn" href="rosary.html">Pray the Holy Rosary</a>
+      <a class="btn outline" href="#apparition">Read the 1948 Lipa Story</a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="welcome-title">
+ <div class="container">
+  <div class="section-heading">
+   <h2 id="welcome-title">Grow in Prayer and Devotion</h2><div class="gold-rule"></div>
+   <p>Choose a devotional guide below. Each link opens its own page, while the schedule panels show helpful information for today.</p>
+  </div>
+  <div class="cards">
+   <article class="card"><div class="card-icon" aria-hidden="true">📿</div><h3>The Holy Rosary</h3><p>Follow the prayers and mysteries of the Rosary, with today's mystery selected automatically by day of the week.</p><a href="rosary.html">Open Rosary Guide →</a></article>
+   <article class="card"><div class="card-icon" aria-hidden="true">🕊</div><h3>Nobena / Novena</h3><p>Continue a nine-day prayer journey. Set the first day of your novena to calculate the scheduled day.</p><a href="novena.html">Open Novena Guide →</a></article>
+   <article class="card"><div class="card-icon" aria-hidden="true">💙</div><h3>Act of Consecration</h3><p>Offer your life, family, and daily intentions to God, following the example of Mary's faith and obedience.</p><a href="consecration.html">Read Consecration →</a></article>
+   <article class="card"><div class="card-icon" aria-hidden="true">⛪</div><h3>About Our Community</h3><p>Learn about the mission, history, members, and devotional activities of your Marian community.</p><a href="about.html">About Us →</a></article>
+  </div>
+ </div>
+</section>
+
+<section class="soft" aria-labelledby="today-title">
+ <div class="container">
+  <div class="section-heading"><h2 id="today-title">Your Prayer Schedule Today</h2><div class="gold-rule"></div><p id="todayDate">Today's date</p></div>
+  <div class="status-grid">
+   <article class="status"><h3>Today's Rosary Mystery</h3><div class="big" id="mysteryName">Loading mystery…</div><p id="mysteryDesc">The mystery is selected using the traditional weekday schedule.</p><small id="mysteryWeekday"></small><p><a href="rosary.html">Continue to rosary.html →</a></p></article>
+   <article class="status"><h3>Novena Schedule</h3><div class="big" id="novenaDay">Day 1 of 9</div><p id="novenaInfo">Choose your novena start date below to calculate the current day.</p><label for="novenaStart"><strong>Novena start date:</strong></label><br><input id="novenaStart" type="date" style="margin:.5rem 0;padding:.6rem;border:1px solid #c7d7ea;border-radius:8px;max-width:100%"><br><small id="novenaStatus" aria-live="polite">Saved in this browser.</small><p><a href="novena.html">Open novena.html →</a></p> <a href="https://ourladymarymediatrixofallgrace.com/blog/" target="_blank" rel="noopener noreferrer">Prayer and Novenas ↗</a></article>
+  </div>
+ </div>
+</section>
+
+<section id="apparition">
+ <div class="container">
+  <div class="section-heading"><h2>The 1948 Lipa Apparition: A Story of Faith and Devotion</h2><div class="gold-rule"></div><p>A historical overview of the reported events at the Carmelite monastery in Lipa, Batangas.</p></div>
+  <article class="article">
+   <p>In 1948, reports of Marian apparitions at the Carmelite monastery in Lipa, Batangas, became an important part of Filipino Catholic devotional history. The reported witness was Teresita “Teresing” Castillo, then a young Carmelite postulant. Accounts describe a series of experiences beginning in September 1948, associated with a vine in the convent garden and reports of showers of rose petals.</p>
+   <h3>The reported appearances</h3>
+   <p>According to accounts preserved by devotees and writers on the Lipa events, Castillo reported seeing a beautiful lady dressed in white, with a rosary, and later identified the figure as “Mary, Mediatrix of All Grace.” The accounts describe calls to prayer, humility, penance, and consecration to the Blessed Virgin Mary. Reports of rose petals drew visitors and strengthened devotion among many people in the Philippines.</p>
+   <h3>Devotion and the Church's historical judgment</h3>
+   <p>The events also became the subject of ecclesiastical investigation and controversy. On April 11, 1951, a committee of Philippine bishops issued a negative judgment regarding the alleged supernatural character of the reported events. In 2015, a local declaration in favor of the apparitions was subsequently nullified by the Congregation for the Doctrine of the Faith in 2016, with the earlier negative judgment remaining in force. The reported apparitions therefore should not be presented as officially approved by the Catholic Church.</p>
+   <p>Whatever one's understanding of the historical reports, Catholics may reflect on the virtues Mary exemplifies in the Gospel: faith, humility, obedience to God, and pointing others toward Jesus. Marian devotion is properly centered on Christ, and prayer should always be in harmony with the teaching and guidance of the Church.</p>
+   <div class="note"><strong>Historical note:</strong> This summary distinguishes devotional accounts from official ecclesiastical judgments. It is an introductory overview, not an official Church declaration or a substitute for the original documents.</div>
+   <div class="source-links">
+    <a href="https://ourladymarymediatrixofallgrace.com/" target="_blank" rel="noopener noreferrer">Requested reference website ↗</a>
+    <a href="https://ourladymarymediatrixofallgrace.com/1925-2/" target="_blank" rel="noopener noreferrer">Lipa Apparitions / Devotion articles ↗</a>
+    <a href="https://ourladymarymediatrixofallgrace.com/documents/" target="_blank" rel="noopener noreferrer">Historical documents ↗</a>
+   </div>
+  </article>
+ </div>
+</section>
+
+<section class="prayer-band">
+ <div class="container">
+  <div class="eyebrow">A prayer of trust</div>
+  <h2>Lead Us Closer to Jesus</h2><div class="gold-rule"></div>
+  <blockquote>“Do whatever he tells you.”</blockquote>
+  <p>John 2:5 — May Mary's example of faith help us listen to God's Word, serve our families and neighbors, and remain faithful to Jesus Christ.</p>
+  <div class="btn-row"><a class="btn" href="consecration.html">Make an Act of Consecration</a><a class="btn outline" href="rosary.html">Pray with Us</a></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="footer-grid">
+  <div><h3>Mary, Mediatrix of All Grace</h3><p>A Marian devotional website dedicated to prayer, reflection, and love for Jesus Christ through the example and intercession of the Blessed Virgin Mary.</p><p><em>Ad Jesum per Mariam</em> — To Jesus through Mary.</p></div>
+  <div><h3>Devotional Pages</h3><ul><li><a href="rosary.html">Holy Rosary</a></li><li><a href="novena.html">Nobena / Novena</a></li><li><a href="consecration.html">Consecration</a></li><li><a href="about.html">About Us</a></li></ul></div>
+  <div><h3>Contact & Community</h3><p>For prayer requests, group activities, or questions, contact your Marian community through its official social media pages.</p><div class="social"><a id="facebookLink" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook Page ↗</a><a id="messengerLink" href="https://m.me/" target="_blank" rel="noopener noreferrer">Message Us ↗</a></div><p><small>Website administrator: replace the social links in this file with your group's official Facebook Page and Messenger URLs.</small></p></div>
+ </div>
+ <div class="footer-bottom"><span>© <span id="year"></span> Mary, Mediatrix of All Grace · Montefaro Group, Imus Chapter</span><span>Marian dedication Made with faith • Blue · White · Gold</span></div>
+</footer>
+<a class="messenger-float" id="messengerFloat" href="https://m.me/" target="_blank" rel="noopener noreferrer" aria-label="Contact us on Messenger"><span>✉</span> Contact Us</a>
+<button class="backtop" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+ const $=id=>document.getElementById(id);
+ // Mobile navigation
+ const menu=$('menuToggle'), nav=$('mainNav');
+ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'✕':'☰';});
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';}));
+ // Date and traditional weekday mysteries: Sun Glorious, Mon Joyful, Tue Sorrowful, Wed Glorious, Thu Luminous, Fri Sorrowful, Sat Joyful.
+ const now=new Date();
+ $('todayDate').textContent=now.toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+ const mysteries=[
+  {name:'Joyful Mysteries',desc:'The Annunciation, Visitation, Nativity, Presentation, and Finding of Jesus in the Temple.',days:[1,6]},
+  {name:'Sorrowful Mysteries',desc:'The Agony in the Garden, Scourging, Crowning with Thorns, Carrying of the Cross, and Crucifixion.',days:[2,5]},
+  {name:'Glorious Mysteries',desc:'The Resurrection, Ascension, Descent of the Holy Spirit, Assumption, and Coronation of Mary.',days:[0,3]},
+  {name:'Luminous Mysteries',desc:'The Baptism of Jesus, Wedding at Cana, Proclamation of the Kingdom, Transfiguration, and Institution of the Eucharist.',days:[4]}
+ ];
+ const m=mysteries.find(x=>x.days.includes(now.getDay()))||mysteries[0];
+ $('mysteryName').textContent=m.name;$('mysteryDesc').textContent=m.desc;$('mysteryWeekday').textContent='For '+now.toLocaleDateString(undefined,{weekday:'long'})+'. Traditional schedule; local customs may vary.';
+ // Novena date stored locally. Default to today (Day 1) until user chooses a start date.
+ const input=$('novenaStart'), storageKey='maryMediatrixNovenaStart';
+ const localISO=d=>{const x=new Date(d.getTime()-d.getTimezoneOffset()*60000);return x.toISOString().slice(0,10);};
+ input.value=localStorage.getItem(storageKey)||localISO(now);
+ function updateNovena(){
+   if(!input.value){$('novenaDay').textContent='Choose a start date';$('novenaInfo').textContent='Select the first day of your novena.';return;}
+   const start=new Date(input.value+'T00:00:00'), today=new Date();today.setHours(0,0,0,0);
+   const diff=Math.floor((today-start)/86400000);
+   localStorage.setItem(storageKey,input.value);
+   if(diff<0){$('novenaDay').textContent='Not started';$('novenaInfo').textContent='Your selected start date is in the future.';}
+   else if(diff<9){$('novenaDay').textContent='Day '+(diff+1)+' of 9';$('novenaInfo').textContent='Scheduled novena day based on your chosen start date.';}
+   else{$('novenaDay').textContent='9-day cycle completed';$('novenaInfo').textContent='Your selected nine-day period has ended. Choose a new start date to begin another cycle.';}
+   $('novenaStatus').textContent='Start date saved in this browser: '+input.value+'.';
+ }
+ input.addEventListener('change',updateNovena);updateNovena();
+ $('year').textContent=new Date().getFullYear();
+ // Back-to-top visibility
+ const back=$('backTop');window.addEventListener('scroll',()=>back.classList.toggle('show',window.scrollY>450),{passive:true});back.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+ // IMPORTANT: update these placeholders with the official group's URLs.
+ const facebookURL='https://www.facebook.com/';const messengerURL='https://m.me/';
+ $('facebookLink').href=facebookURL;$('messengerLink').href=messengerURL;$('messengerFloat').href=messengerURL;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102b70">
+<title>Gawain | Mama Mary Mediatrix of All Grace</title>
+
+<style>
+:root {
+  --blue: #102b70;
+  --blue2: #183f91;
+  --gold: #d8ad45;
+  --gold-light: #f7e7ad;
+  --white: #fff;
+  --cream: #fffaf0;
+  --text: #19284b;
+  --shadow: 0 8px 24px #071a4830;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: linear-gradient(145deg,#f5f7ff,#fffaf0);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+header {
+  color: var(--white);
+  text-align: center;
+  padding: 30px 16px 24px;
+  background: linear-gradient(135deg,#091b51,var(--blue),#244e9d);
+  border-bottom: 5px solid var(--gold);
+  box-shadow: var(--shadow);
+}
+.mary-symbol {
+  display: inline-grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold-light);
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+header h1 { margin: 0; font-size: clamp(1.5rem,4vw,2.4rem); }
+header p { margin: 6px 0; color: var(--gold-light); }
+.date-line { margin-top: 12px; font-size: .95rem; }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px;
+  background: white;
+  border-bottom: 1px solid #e5d6ac;
+}
+nav a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: .9rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: .2s;
+}
+nav a:hover, nav a:focus-visible {
+  background: var(--blue);
+  color: white;
+  outline: 2px solid var(--gold);
+}
+main { width: min(920px,94%); margin: 26px auto 42px; }
+.card {
+  background: white;
+  border: 1px solid #ead9a9;
+  border-radius: 18px;
+  padding: clamp(18px,4vw,30px);
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+  animation: appear .35s ease both;
+}
+@keyframes appear {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+h2, h3 { color: var(--blue); line-height: 1.3; }
+h2 { margin-top: 0; }
+.gold-line {
+  width: 90px;
+  height: 3px;
+  background: var(--gold);
+  margin: 12px 0 22px;
+}
+.center { text-align: center; }
+.lead { font-size: 1.08rem; }
+.muted { color: #53617c; font-size: .93rem; }
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 22px 0 8px;
+}
+button, .button-link {
+  font: inherit;
+  font-weight: bold;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  padding: 12px 20px;
+  cursor: pointer;
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 4px 10px #102b7022;
+  transition: transform .18s, background .18s, box-shadow .18s;
+  text-decoration: none;
+  display: inline-block;
+}
+button:hover, .button-link:hover {
+  transform: translateY(-2px);
+  background: var(--blue2);
+  box-shadow: 0 7px 16px #102b7030;
+}
+button:focus-visible, a:focus-visible {
+  outline: 3px solid #d8ad45;
+  outline-offset: 3px;
+}
+button.secondary {
+  background: white;
+  color: var(--blue);
+}
+button.gold {
+  background: #f4df9b;
+  color: #19284b;
+}
+button:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+.gospel-box {
+  background: var(--cream);
+  border-left: 5px solid var(--gold);
+  padding: 18px;
+  border-radius: 8px;
+}
+.gospel-frame {
+  width: 100%;
+  min-height: 250px;
+  border: 1px solid #d9c88f;
+  border-radius: 10px;
+  background: white;
+}
+.notice {
+  background: #f1f5ff;
+  border: 1px solid #d4def6;
+  border-radius: 10px;
+  padding: 12px 15px;
+}
+.reading {
+  white-space: pre-line;
+  background: #fffaf0;
+  border-radius: 10px;
+  padding: 18px;
+  border-left: 4px solid var(--gold);
+}
+.accordion {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0 0;
+  background: #f3f6ff;
+  color: var(--blue);
+  border: 1px solid #d9dfef;
+  box-shadow: none;
+}
+.accordion::after { content: "+"; font-size: 1.3rem; }
+.accordion[aria-expanded="true"] {
+  background: var(--blue);
+  color: white;
+}
+.accordion[aria-expanded="true"]::after { content: "−"; }
+.accordion-panel {
+  padding: 16px;
+  border: 1px solid #d9dfef;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  white-space: pre-line;
+  background: white;
+}
+audio { display: block; width: 100%; margin: 18px 0; }
+.lyrics {
+  background: #fffaf0;
+  border: 1px solid #ead9a9;
+  border-radius: 12px;
+  padding: 16px;
+  white-space: pre-line;
+}
+.progress {
+  height: 7px;
+  background: #e9edf8;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 14px 0;
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg,var(--blue),var(--gold));
+  transition: width .3s;
+}
+footer {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--blue);
+  color: white;
+  border-top: 5px solid var(--gold);
+}
+footer p { margin: 5px; }
+@media(max-width:600px) {
+  nav { gap: 3px; }
+  nav a { padding: 7px 9px; font-size: .82rem; }
+  .button-row { flex-direction: column; }
+  .button-row button, .button-row .button-link { width: 100%; }
+  .gospel-frame { min-height: 180px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="mary-symbol" aria-hidden="true">✧</div>
+  <h1>Mama Mary, Mediatrix of All Grace</h1>
+  <p>Marian Theme • Panalangin • Pagninilay • Paglilingkod</p>
+  <div class="date-line">📅 <span id="todayDate">Inihahanda ang petsa…</span></div>
+</header>
+
+<nav aria-label="Pangunahing nabigasyon">
+  <a href="index.html">Home</a>
+  <a href="rosary.html">Rosaryo</a>
+  <a href="novena - Copy.html">Nobena</a>
+  <a href="gawain.html" aria-current="page">Gawain</a>
+  <a href="about.html">Tungkol</a>
+</nav>
+
+<main>
+  <section id="gospelContainer" class="card">
+    <h2 class="center">Ang Mabuting Balita sa Araw na Ito</h2>
+    <div class="gold-line" style="margin-inline:auto"></div>
+    <p class="center">Petsa: <strong id="gospelDate"></strong></p>
+    <div class="gospel-box">
+      <p>Basahin at pagnilayan natin ang Salita ng Diyos sa araw na ito.</p>
+      <p class="muted">Buksan ang Awit at Papuri upang makita ang mga pagbasa at Mabuting Balita para sa kasalukuyang araw.</p>
+      <div class="button-row">
+        <a class="button-link" href="https://www.awitatpapuri.com/"
+           target="_blank" rel="noopener noreferrer">Basahin ang Ebanghelyo ↗</a>
+      </div>
+      <iframe class="gospel-frame"
+        title="Awit at Papuri website"
+        src="https://www.awitatpapuri.com/"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+      </iframe>
+      <p class="muted">Kung hindi lumabas ang website sa kahon, gamitin ang button sa itaas.</p>
+    </div>
+
+    <div class="button-row">
+      <button data-open="akyatContainer">Pag-akyat — Ang Pagtanggap</button>
+      <button data-open="gawainContainer">Gawain — Ang Munting Misa</button>
+      <button data-open="babaContainer">Pagbaba — Ang Pagpapaalam</button>
+    </div>
+  </section>
+
+  <!-- PAG-AKYAT / PAGTANGGAP -->
+  <section id="akyatContainer" class="card" hidden>
+    <h2>Pag-akyat: Ang Pagtanggap kay Mama Mary</h2>
+    <div class="gold-line"></div>
+    <div id="akyatReading">
+      <h3>Ang Pagtanggap kay Mary, Mediatrix of All Grace</h3>
+      <div class="reading">
+        Minamahal na mga kapatid, buong galak at pananampalataya nating tanggapin si Mama Mary, Mediatrix of All Grace, sa ating tahanan.
+
+        Nawa'y maging bukas ang ating mga puso sa panalangin, pagmamahalan, at pagtitiwala sa Panginoon. Sa tulong ng mapagpalang pamamagitan ng Mahal na Birheng Maria, nawa'y mas mapalalim natin ang ating ugnayan kay Hesus.
+
+        Tanggapin natin si Maria bilang ating Ina at huwaran ng kababaang-loob, pananampalataya, at pagsunod sa kalooban ng Diyos.
+      </div>
+      <div class="button-row">
+        <button id="akyatReadingNext">Susunod na Hakbang →</button>
+      </div>
+    </div>
+
+    <div id="akyatPrayers" hidden>
+      <h3>Manalangin Tayo</h3>
+      <p>Buong puso tayong manalangin sa Ama, sa pamamagitan ni Hesukristo.</p>
+      <div class="prayer-accordion">
+        <button class="accordion" aria-expanded="false" aria-controls="amaPanel">Ama Namin</button>
+        <div id="amaPanel" class="accordion-panel" hidden>
+          Ama namin, sumasalangit Ka, sambahin ang ngalan Mo. Mapasaamin ang kaharian Mo. Sundin ang loob Mo dito sa lupa para nang sa langit. Bigyan Mo kami ngayon ng aming kakanin sa araw-araw. At patawarin Mo kami sa aming mga sala, para nang pagpapatawad namin sa nagkakasala sa amin. At huwag Mo kaming ipahintulot sa tukso, at iadya Mo kami sa lahat ng masama. Amen.
+        </div>
+
+        <button class="accordion" aria-expanded="false" aria-controls="abaPanel">Aba Ginoong Maria</button>
+        <div id="abaPanel" class="accordion-panel" hidden>
+          Aba Ginoong Maria, napupuno ka ng grasya, ang Panginoong Diyos ay sumasaiyo. Bukod kang pinagpala sa babaeng lahat, at pinagpala naman ang iyong Anak na si Hesus. Santa Maria, Ina ng Diyos, ipanalangin mo kaming makasalanan, ngayon at kung kami'y mamamatay. Amen.
+        </div>
+
+        <button class="accordion" aria-expanded="false" aria-controls="luwalhatiPanel">Luwalhati</button>
+        <div id="luwalhatiPanel" class="accordion-panel" hidden>
+          Luwalhati sa Ama, at sa Anak, at sa Espiritu Santo. Kapara noong unang-una, ngayon at magpakailanman, at magpasawalang hanggan. Amen.
+        </div>
+      </div>
+      <div class="button-row">
+        <button id="akyatPrayerNext">Susunod na Hakbang →</button>
+      </div>
+    </div>
+
+    <div id="akyatOffering" hidden>
+      <h3>Ang Ating Paghahandog</h3>
+      <div class="reading">
+        Sikapin natin na mag-alay ng taimtim na panalangin at magrosaryo araw-araw. Ipagkatiwala natin ang ating buong sarili, pati na ang ating mga pangarap at pinakamalalim na hangarin, sa Panginoon. Sa pamamagitan ng mapagpalang pamamagitan ng ating Mahal na Ina, Mary, Mediatrix of All Grace, makakamit natin ang ating mga minimithi ayon sa Kanyang banal na kalooban.
+      </div>
+      <div class="button-row">
+        <button id="akyatOfferFinish" class="gold">Amen — Ipagpatuloy</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGBA-BABA / PAGPAPAALAM -->
+  <section id="babaContainer" class="card" hidden>
+    <h2>Pagbaba: Ang Pagpapaalam</h2>
+    <div class="gold-line"></div>
+    <div id="babaReading">
+      <h3>Ang Pagbasa ng Pagpapaalam</h3>
+      <div class="reading">
+        Minamahal na pamilya, sa ating pagpapaalam kay Mama Mary, Mediatrix of All Grace, dalhin natin sa ating mga puso ang mga biyayang natanggap natin sa sama-samang pananalangin.
+
+        Nawa'y manatili sa ating tahanan ang pagkakaisa, kapayapaan, pananampalataya, at pag-ibig. Patuloy nating tularan ang kababaang-loob ni Maria at ang kanyang lubos na pagtitiwala sa Diyos.
+      </div>
+      <div class="button-row">
+        <button id="babaReadingNext">Susunod na Hakbang →</button>
+      </div>
+    </div>
+
+    <div id="babaSong" hidden>
+      <h3>Awitin ng Pagpapaalam</h3>
+      <p>Awit ng pasasalamat para sa pagdalaw ni Mama Mary.</p>
+      <div class="lyrics">[Koro]
+Inang Birhen, ng Mediatrix
+Kami po ay, laging bigkisin
+Ng dakila mong, pag-ibig
+At ng puso mo'y, nagniningning
+[Berso 1]
+Kami sana’y, pagpalain
+Sa lahat ng aming gagawin
+Makatulong, sa aming kapwa
+Panalangin ay dinggin
+Pangarap namin, ay maka akay
+Tamang landas ang, igagabay
+Unos at hangin, kasama sa buhay
+Ang Panginoon, ang patnubay
+[Koro]
+Inang Birhen, ng Mediatrix
+Kami po ay laging basbasan
+Ng dakila, mong hangarin
+Palad mo ay idampi lamang
+Sa aming sakit at tiisin
+Gagaling ang aming katawan
+Dahil puso, mo’y busilak
+Oh Inang minamahal
+Dahil puso, mo’y busilak
+Oh Inang minamahal
+[Tulay]
+Paalam na sa ’yo, aming Inang minamahal,
+Kami isama mo, sa iyong pagdarasal
+Ikaw aming Ina, ang siyang dumaramay
+Sa bawat pighati, nitong aming buhay
+Ang iyong mga anak, na nanlulupaypay
+Sa bawat pagsubok, na aming tinataglay
+Bigyan mo po kami, ng pusong matapat
+Na handang maglingkod, at magpasalamat
+Ikaw ang siyang gabay, ng iyong mga anak
+Na magbalik-loob, magsisi ng ganap
+Paalam na Ina, nawa’y magbalik ka
+Sa aming tahanan, ngayon ay masaya
+Dahil sa ’yo Ina, aming nakilala
+Ang aming Diyos Ama,
+[Katapusan]
+Paalam na, Ina,
+Paalam na, Ina....
+
+VIVA HESUS... VIVA MARIA...
+VIVA MARIA... VIVA HESUS...</div>
+      <div id="babaAudioBox" hidden>
+        <audio id="babaAudio" controls muted preload="metadata">
+          <source src="mp3/inang birhen.mp3" type="audio/mpeg">
+        </audio>
+        <p class="muted">Kung hindi awtomatikong tumugtog, pindutin ang Play.</p>
+      </div>
+      <div class="button-row">
+        <button id="babaSongNext">Susunod na Hakbang →</button>
+      </div>
+    </div>
+
+    <div id="babaThanks" hidden>
+      <h3>Maraming Salamat!</h3>
+      <div class="reading">
+        Maraming salamat sa inyong buong pamilya sa mainit na pagtanggap kay Mama Mary, Mediatrix of All Grace, sa inyong tahanan. Ang mga araw na siya ay kapiling ninyo sa pananalangin at pagrorosaryo ay tunay na nagdala ng grasya at pagpapakabanal. Habang pinapaspasan natin ang kanyang paglalakbay sa susunod na pamilya, nawa'y manatili ang kanyang mapagpalang presensya sa inyong mga puso. Pagpalain nawa ng Panginoon ang inyong tahanan magpakailanman.
+      </div>
+      <div class="button-row">
+        <button id="babaFinish" class="gold">Salamat sa Inyong Pagtanggap</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAWAIN / MUNTING MISA -->
+  <section id="gawainContainer" class="card" hidden>
+    <h2>Ang Munting Misa</h2>
+    <div class="gold-line"></div>
+    <div id="gawainIntro">
+      <p class="lead">Ngayong araw po ay ating sisimulan ang ating munting misa o gawain.</p>
+      <p>Magkaisa tayo sa panalangin, awitan, pagsisisi, pagpupuri, at pagtanggap sa biyaya ng Diyos.</p>
+      <div class="button-row">
+        <button id="startGawain">Simulan ang Gawain</button>
+      </div>
+    </div>
+
+    <div id="gawainFlow" hidden>
+      <p id="stepCounter" class="muted"></p>
+      <div class="progress" aria-label="Pag-usad ng gawain">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <h3 id="stepTitle"></h3>
+      <div id="stepContent"></div>
+      <div id="stepAudioBox" hidden>
+        <audio id="stepAudio" controls preload="metadata">
+          Your browser does not support audio playback.
+        </audio>
+        <p class="muted">Paalala: maaaring kailangang pindutin ang Play kung hinaharang ng browser ang autoplay.</p>
+      </div>
+      <div class="button-row">
+        <button id="nextStep">Susunod na Hakbang →</button>
+        <button id="returnToGospel" class="secondary">Bumalik sa Ebanghelyo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRAY OVER -->
+  <section id="prayOverContainer" class="card" hidden>
+    <h2>Pray Over: Panalangin ng Pagpapala</h2>
+    <div class="gold-line"></div>
+    <p>Manalangin nang may pananampalataya at paggalang. Nawa'y umalalay sa atin ang Panginoon sa pamamagitan ng Espiritu Santo.</p>
+
+    <button class="accordion" aria-expanded="false" aria-controls="pray1">Pray Over 1 — Panalangin ng Pagtitiwala</button>
+    <div class="accordion-panel" id="pray1" hidden>
+      Panginoong Hesus, inilalapit namin sa Iyo ang aming buhay, pamilya, at tahanan. Turuan Mo kaming magtiwala sa Iyong karunungan at banal na kalooban. Amen.
+    </div>
+    <button class="accordion" aria-expanded="false" aria-controls="pray2">Pray Over 2 — Panalangin ng Pagpapagaling</button>
+    <div class="accordion-panel" id="pray2" hidden>
+      Maawain naming Panginoon, aliwin Mo ang mga pusong sugatan, palakasin ang mga nanghihina, at pagkalooban ng pag-asa ang mga dumaranas ng pagsubok. Amen.
+    </div>
+    <button class="accordion" aria-expanded="false" aria-controls="pray3">Pray Over 3 — Panalangin para sa Pamilya</button>
+    <div class="accordion-panel" id="pray3" hidden>
+      Pagpalain Mo ang aming mga pamilya. Nawa'y mamayani sa aming tahanan ang pag-ibig, pagpapatawad, paggalang, pagkakaisa, at kapayapaan. Amen.
+    </div>
+    <button class="accordion" aria-expanded="false" aria-controls="pray4">Pray Over 4 — Panalangin ng Pagbabago</button>
+    <div class="accordion-panel" id="pray4" hidden>
+      Espiritu Santo, baguhin Mo ang aming mga puso. Ilayo kami sa kasalanan at gabayan sa paggawa ng mabuti, sa paglilingkod, at sa tapat na pagsunod sa Diyos. Amen.
+    </div>
+    <button class="accordion" aria-expanded="false" aria-controls="pray5">Pray Over 5 — Panalangin ng Pasasalamat</button>
+    <div class="accordion-panel" id="pray5" hidden>
+      Ama naming mapagmahal, salamat sa buhay, pananampalataya, at mga biyayang araw-araw Mong ipinagkakaloob. Sa pamamagitan ni Maria, akayin Mo kami palapit kay Hesus. Amen.
+    </div>
+
+    <div class="button-row">
+      <button id="prayOverDone" class="gold">Tapos na po ang Pray Over — Magpatuloy sa Pagpapaalam</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>✧ Mama Mary, Mediatrix of All Grace ✧</p>
+  <p>Sa pamamagitan ni Maria, akayin Mo kami kay Hesus.</p>
+  <p>© <span id="year"></span> Marian Theme</p>
+</footer>
+
+<script>
+"use strict";
+
+const $ = id => document.getElementById(id);
+
+function updateDate() {
+  const now = new Date();
+  const formatted = new Intl.DateTimeFormat("fil-PH", {
+    weekday: "long", year: "numeric", month: "long", day: "numeric"
+  }).format(now);
+  $("todayDate").textContent = formatted;
+  $("gospelDate").textContent = formatted;
+  $("year").textContent = now.getFullYear();
+}
+updateDate();
+
+const mainContainers = [
+  "gospelContainer", "akyatContainer", "babaContainer",
+  "gawainContainer", "prayOverContainer"
+];
+
+function stopAllAudio() {
+  ["babaAudio", "stepAudio"].forEach(id => {
+    const audio = $(id);
+    if (!audio) return;
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.querySelectorAll("source").forEach(source => source.removeAttribute("src"));
+    audio.load();
+  });
+  $("babaAudioBox").hidden = true;
+  $("stepAudioBox").hidden = true;
+}
+
+function showContainer(id) {
+  stopAllAudio();
+  mainContainers.forEach(containerId => {
+    $(containerId).hidden = containerId !== id;
+  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.querySelectorAll("[data-open]").forEach(button => {
+  button.addEventListener("click", () => {
+    const id = button.dataset.open;
+    showContainer(id);
+    if (id === "babaContainer") showBabaStep(0);
+    if (id === "akyatContainer") showAkyatStep(0);
+    if (id === "gawainContainer") resetGawain();
+  });
+});
+
+/* Accordion: only one panel remains open within each accordion group. */
+document.querySelectorAll(".accordion").forEach(button => {
+  button.addEventListener("click", () => {
+    const panel = $(button.getAttribute("aria-controls"));
+    const willOpen = button.getAttribute("aria-expanded") !== "true";
+    const scope = button.closest(".prayer-accordion") ||
+                  button.closest("#prayOverContainer") || document;
+
+    scope.querySelectorAll(".accordion[aria-expanded='true']").forEach(other => {
+      if (other === button) return;
+      other.setAttribute("aria-expanded", "false");
+      const otherPanel = $(other.getAttribute("aria-controls"));
+      if (otherPanel) otherPanel.hidden = true;
+    });
+
+    button.setAttribute("aria-expanded", String(willOpen));
+    panel.hidden = !willOpen;
+  });
+});
+
+/* PAG-AKYAT */
+function showAkyatStep(step) {
+  $("akyatReading").hidden = step !== 0;
+  $("akyatPrayers").hidden = step !== 1;
+  $("akyatOffering").hidden = step !== 2;
+}
+function resetAccordionGroup(container) {
+  container.querySelectorAll(".accordion").forEach(button => {
+    button.setAttribute("aria-expanded", "false");
+    const panel = $(button.getAttribute("aria-controls"));
+    if (panel) panel.hidden = true;
+  });
+}
+function resetAkyat() {
+  showAkyatStep(0);
+  resetAccordionGroup($("akyatContainer"));
+}
+$("akyatReadingNext").addEventListener("click", () => showAkyatStep(1));
+$("akyatPrayerNext").addEventListener("click", () => showAkyatStep(2));
+$("akyatOfferFinish").addEventListener("click", () => {
+  resetAkyat();
+  showContainer("gospelContainer");
+});
+
+/* PAGBA-BA / PAGPAPAALAM */
+let babaStep = 0;
+function showBabaStep(step) {
+  babaStep = step;
+  $("babaReading").hidden = step !== 0;
+  $("babaSong").hidden = step !== 1;
+  $("babaThanks").hidden = step !== 2;
+  if (step === 1) {
+    $("babaAudioBox").hidden = false;
+    const audio = $("babaAudio");
+    audio.src = "mp3/inang birhen.mp3";
+    audio.load();
+    const playPromise = audio.play();
+    if (playPromise) playPromise.catch(() => {});
+  } else {
+    const audio = $("babaAudio");
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
+    $("babaAudioBox").hidden = true;
+  }
+}
+$("babaReadingNext").addEventListener("click", () => showBabaStep(1));
+$("babaSongNext").addEventListener("click", () => showBabaStep(2));
+$("babaAudio").addEventListener("ended", () => showBabaStep(2));
+$("babaFinish").addEventListener("click", () => {
+  showContainer("gospelContainer");
+});
+
+/* GAWAIN: sequence of songs, prayers and reflection. */
+const steps = [
+  {
+    title: "1. Birhen ng Pag-ibig",
+    type: "audio",
+    src: "mp3/birhen ng pagibig.mp3",
+    lyrics: `Mahal na birhen ng pag ibig
+Ang ngiti mo'y may pahiwatig
+Ikaw ang siyang nagdulot sa amin
+Ng pag asa sa aming dibdib
+
+Ang mukha mo pag nasilayan
+Hirap namin ay napaparam
+Ang lahat naming karamdaman
+Ay kagalingan ang nararanas
+
+Ang yong tanglaw ay nagbibigay ligaya
+Sa aming pusong tigib na ng dusa
+Sa basbas ng palad mo kami'y napukaw
+Lahat ng aming sala'y tinanggap ng yong pagmamahal
+
+O birhen ng pag ibig
+Ika'y dakila kapag umibig
+Tulad ng bulaklak pag nalaglag
+Ang yong bango'y humahalimuyak.`
+  },
+  {
+    title: "2. Panimulang Panalangin",
+    type: "text",
+    content: `Leader:
+Sa ngalan ng Ama, at ng Anak, at ng Espiritu Santo. Amen.
+
+Mapagmahal naming Ama, salamat sa pagkakataong kami ay magtipon upang manalangin. Buksan Mo ang aming mga puso at isipan sa Iyong presensya. Sa pamamagitan ni Mama Mary, Mediatrix of All Grace, akayin Mo kami palapit kay Hesus. Pagpalain Mo ang aming munting misa at ang bawat pamilyang nakikiisa. Amen.`
+  },
+  {
+    title: "3. Seek Ye First",
+    type: "audio",
+    src: "mp3/seekye.mp3",
+    lyrics: `Verse 1
+Seek ye first the Kingdom of God
+And His righteousness,
+And all these things
+Shall be added unto you,
+Allelu, alleluia.
+
+Verse 2
+Man shall not live by bread alone,
+But by every word
+That proceeds from the mouth of God
+Allelu, alleluia.
+
+Verse 3
+Ask, and it shall be given unto you.
+Seek and ye shall find.
+Knock and it shall be opened unto you
+Allelu, alleluia.`
+  },
+  {
+    title: "4. Pagbasa ng Mabuting Balita",
+    type: "text",
+    content: `Pagbasa ng Banal na Salita ng Diyos.\nMaikling pagninilay sa mensahe ng Banal na salita ngayong araw.\nPagbabahagi ng mga karanasan habang nasa tahanan ang Mahal na Birheng Mary Mediatrix Of All Grace.`
+  },
+  {
+    title: "5. Maawain na Hesus",
+    type: "audio",
+    src: "mp3/maawain na hesus.mp3",
+    lyrics: `Maawain na Hesus,
+Patawarin Mo kami,
+Sa aming kasamaan,
+Maraming kasalanan.
+
+Kami ay nagsisi na,
+At hindi na uulit pa,
+Habang may buhay,
+Ikaw ay paglilingkuran.
+
+Ilaw ng pagbabagong buhay,
+Lahat ng makasalanan,
+Aming makamtan,
+Ang buhay na walang hanggan.
+
+O Hesus, maawa Ka,
+Panalangin dinggin Mo,
+Habang may buhay,
+Ikaw ay paglilingkuran.`
+  },
+  {
+    title: "6. Panalangin ng Pagsisisi",
+    type: "text",
+    content: `Panginoong Hesus, buong pagpapakumbaba naming kinikilala ang aming mga pagkukulang. Patawarin Mo kami sa mga salitang nakasakit, sa kabutihang hindi namin nagawa, at sa mga pagkakataong nakalimutan naming magmahal. Linisin Mo ang aming puso at tulungan kaming magsimulang muli. Amen.`
+  },
+  {
+    title: "7. Come Holy Spirit",
+    type: "audio",
+    src: "mp3/come.mp3",
+    lyrics: `Come Holy Spirit, I need You.
+Come Holy Spirit, I pray.
+Come with Your strength and Your power.
+Come with Your own special way.
+
+Come like a spring in the desert.
+Come to the withered of soul.
+Lord let Your sweet healing power
+Touch me and make me whole.
+
+Gambalain Mo kami, Panginoon,
+Na mangahas ng buong tapang,
+Na maglakbay sa higit na malalalim na karagatan,
+Na kung saan ang mga unos ay maghahayag ng Iyong pagka-Panginoon;
+Kung saan, mawala man sa aming balintataw ang lupa,
+Matatagpuan naman namin ang mga bituin.
+
+Hinihiling namin sa Iyo na itulak kami
+Patungo sa mga hangganan na abot-tanaw ang aming mga pag-asa,
+At ihatid kami sa hinaharap
+Na may lakas, tapang, pag-asa, at pag-ibig.
+
+Halina, Espiritu Santo, kinakailangan Kita.
+Sigla at lakas ng mahina,
+Pag-asa Ka naming lahat.
+
+Glory be to the Father,
+Glory be to the Son,
+Glory be to the Spirit,
+Now and forever. Amen.`
+  },
+  {
+    title: "8. Pagpupuri sa Panginoon",
+    type: "text",
+    content: `Luwalhati sa Ama, at sa Anak, at sa Espiritu Santo. Kapara noong unang-una, ngayon at magpakailanman, at magpasawalang hanggan. Amen.
+
+Panginoon, Ikaw ang aming pag-asa, lakas, at kaligtasan. Tanggapin Mo ang aming papuri at pasasalamat. Nawa'y makita sa aming mga salita at gawa ang Iyong kabutihan.`
+  },
+  {
+    title: "9. Halina, Espiritu Santo — Pagpapahid ng Langis",
+    type: "audio",
+    src: "mp3/halina.mp3",
+    lyrics: `Intro
+O Mama Mary Mediatrix,
+Ina ng Biyaya, Ina ng Pag-asa,
+Akayin Mo kami sa puso ni Hesus.
+
+Halina, Espiritu Santo.
+
+Unang Saknong
+Espiritu Santo, halina't dumating,
+Sa aming puso'y liwanag ay ihatid.
+Sa pamamagitan ni Maria, Ina namin,
+Pag-ibig ng Diyos sa amin ay ibuhos.
+
+Pre-Chorus
+Buksan ang puso, buksan ang kaluluwa,
+Ang Iyong banal na hipo'y aming hinihintay.
+Sa bawat panalangin, sa bawat pagtawag,
+Espiritu Santo, kami'y Iyong yakap.
+
+Koro
+Halina, Espiritu Santo,
+Buhos Mo ang Iyong biyaya.
+Sa pamamagitan ni Maria,
+Mediatrix ng Iyong awa.
+
+Halina, Espiritu Santo,
+Puspusin Mo kami ng Iyong liwanag.
+Gabayan Mo kami patungo kay Hesus,
+At gawin Mong banal ang aming buhay.
+
+Ikalawang Saknong
+Kung kami'y nanghihina, kami'y palakasin,
+Kung kami'y naliligaw, kami'y patnubayan.
+Pagalingin ang pusong sugatan at takot,
+At ang kapayapaan Mo'y aming matanggap.
+
+Bridge
+O Maria, Ina ng Biyaya,
+Itaas Mo kami kay Hesus.
+O Espiritu Santo, aming hinihiling,
+Manahan Ka sa aming puso.
+
+Buhayin Mo ang aming pananampalataya,
+Sindihan Mo ang apoy ng pag-ibig.
+Sa aming pamilya, sa aming tahanan,
+Manatili Ka magpakailanman.
+
+Grand Chorus
+HALINA, ESPIRITU SANTO!
+HALINA, ESPIRITU SANTO!
+Buhos Mo ang Iyong biyaya,
+Buhos Mo ang Iyong liwanag!
+
+Sa pamamagitan ni Mama Mary Mediatrix,
+Akayin Mo kami kay Hesus na Panginoon.
+Puspusin Mo kami ng Iyong presensya,
+At gawin Mong templo ng Iyong pag-ibig!
+
+Coda
+Espiritu Santo, halina.
+Espiritu Santo, manahan Ka sa amin.
+O Mama Mary Mediatrix, ipanalangin mo kami.
+Halina, Espiritu Santo,
+Halina at manahan Ka sa amin. Amen.`
+  },
+  {
+    title: "10. Pray Over — Panalangin ng Pagpapala",
+    type: "prayover",
+    content: `Sa bahaging ito, manalangin tayo para sa ating pamilya, tahanan, kalusugan, pananampalataya, at mga pangangailangan. Buksan ang bawat panalangin sa ibaba at taimtim na makiisa.`
+  }
+];
+
+let currentStep = 0;
+
+function resetGawain() {
+  currentStep = 0;
+  $("gawainIntro").hidden = false;
+  $("gawainFlow").hidden = true;
+  $("stepTitle").textContent = "";
+  $("stepContent").innerHTML = "";
+  $("stepCounter").textContent = "";
+  $("progressBar").style.width = "0%";
+  stopAllAudio();
+}
+
+function renderStep(index) {
+  stopAllAudio();
+  currentStep = index;
+
+  if (index >= steps.length) {
+    $("gawainContainer").hidden = true;
+    $("prayOverContainer").hidden = false;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  const step = steps[index];
+  $("stepCounter").textContent =
+    `Hakbang ${index + 1} sa ${steps.length}`;
+  $("progressBar").style.width =
+    `${((index + 1) / steps.length) * 100}%`;
+  $("stepTitle").textContent = step.title;
+
+  if (step.type === "audio") {
+    $("stepContent").innerHTML =
+      `<div class="lyrics"></div>`;
+    $("stepContent").querySelector(".lyrics").textContent = step.lyrics;
+    $("stepAudioBox").hidden = false;
+    const audio = $("stepAudio");
+    audio.src = step.src;
+    audio.load();
+    const playPromise = audio.play();
+    if (playPromise) playPromise.catch(() => {});
+    $("nextStep").textContent = "Susunod na Hakbang →";
+  } else if (step.type === "prayover") {
+    $("stepContent").textContent = step.content;
+    $("stepAudioBox").hidden = true;
+    $("nextStep").textContent = "Magpatuloy sa Pray Over →";
+  } else {
+    $("stepContent").innerHTML = "";
+    const content = document.createElement("div");
+    content.className = "reading";
+    content.textContent = step.content;
+    $("stepContent").appendChild(content);
+    $("stepAudioBox").hidden = true;
+    $("nextStep").textContent = "Susunod na Hakbang →";
+  }
+}
+
+$("startGawain").addEventListener("click", () => {
+  $("gawainIntro").hidden = true;
+  $("gawainFlow").hidden = false;
+  renderStep(0);
+});
+
+$("nextStep").addEventListener("click", () => {
+  if (steps[currentStep].type === "prayover") {
+    $("gawainContainer").hidden = true;
+    $("prayOverContainer").hidden = false;
+    stopAllAudio();
+    return;
+  }
+  renderStep(currentStep + 1);
+});
+
+$("stepAudio").addEventListener("ended", () => {
+  if (steps[currentStep] && steps[currentStep].type === "audio") {
+    renderStep(currentStep + 1);
+  }
+});
+
+$("returnToGospel").addEventListener("click", () => {
+  showContainer("gospelContainer");
+  resetGawain();
+});
+
+$("prayOverDone").addEventListener("click", () => {
+  resetAccordionGroup($("prayOverContainer"));
+  showContainer("babaContainer");
+  showBabaStep(0);
+});
+
+$("babaAudio").addEventListener("error", () => {
+  // Keep the closing-song step visible so the user can manually continue.
+  $("babaAudioBox").hidden = false;
+});
+
+$("stepAudio").addEventListener("error", () => {
+  // If a local MP3 is missing, keep the lyrics visible and let the user continue.
+});
+
+$("babaAudio").addEventListener("play", () => {
+  $("babaAudioBox").hidden = false;
+});
+
+resetAkyat();
+resetGawain();
+showContainer("gospelContainer");
+</script>
+</body>
+</html>

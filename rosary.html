@@ -1,0 +1,1092 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#082b70">
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>Holy Rosary | Mary Mediatrix of All Grace</title>
+
+<style>
+:root {
+  --blue: #082b70;
+  --blue-dark: #04183f;
+  --blue-light: #17499c;
+  --gold: #d6ad45;
+  --gold-light: #f6e5a6;
+  --white: #fff;
+  --cream: #fffaf0;
+  --text: #193052;
+  --shadow: 0 10px 30px rgba(4, 24, 63, .13);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #f7f9ff, #fffdf7);
+  line-height: 1.65;
+}
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+a { color: inherit; }
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: var(--white);
+  background: linear-gradient(120deg, var(--blue-dark), var(--blue));
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 4px 18px #04183f30;
+}
+
+.header-inner {
+  max-width: 1200px;
+  padding: 13px 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.marian-emblem {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold-light);
+  font-size: 30px;
+  background: #ffffff0c;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: clamp(15px, 2.2vw, 22px);
+  line-height: 1.3;
+  color: var(--gold-light);
+}
+
+.brand p {
+  margin: 3px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: .8px;
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-button, .menu-button {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 24px;
+  transition: .25s ease;
+}
+
+.language-button:hover, .menu-button:hover {
+  background: var(--gold);
+  color: var(--blue-dark);
+  transform: translateY(-2px);
+}
+
+.menu-button { display: none; }
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0 15px 12px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 7px 13px;
+  border-radius: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  transition: .25s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+  background: var(--gold);
+  color: var(--blue-dark);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  padding: 62px 20px 54px;
+  background:
+    radial-gradient(ellipse at 50% 0%, #2860ad 0%, transparent 55%),
+    linear-gradient(145deg, var(--blue-dark), var(--blue), #123e87);
+}
+
+.hero::before, .hero::after {
+  content: "✧";
+  position: absolute;
+  font-size: 100px;
+  color: #d6ad4520;
+  pointer-events: none;
+}
+
+.hero::before { top: 5px; left: 6%; }
+.hero::after { bottom: 0; right: 7%; }
+
+.hero-emblem {
+  color: var(--gold-light);
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.hero h2 {
+  margin: 0 auto 12px;
+  color: var(--gold-light);
+  font-size: clamp(27px, 5vw, 46px);
+  line-height: 1.2;
+}
+
+.hero p {
+  max-width: 720px;
+  margin: auto;
+  font-size: 17px;
+}
+
+.hero .verse {
+  margin-top: 20px;
+  font-style: italic;
+  color: #fff1be;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 30px auto 50px;
+}
+
+.section-heading {
+  color: var(--blue);
+  text-align: center;
+  font-size: 27px;
+  margin: 0 0 7px;
+}
+
+.section-subtitle {
+  text-align: center;
+  margin: 0 auto 24px;
+  color: #53647d;
+}
+
+.date-card {
+  padding: 22px;
+  border: 1px solid #e9d8a1;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #fff, #fffaf0);
+  box-shadow: var(--shadow);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.date-card .date {
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.date-card .mystery-label {
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 7px 17px;
+  background: var(--blue);
+  color: white;
+  border: 1px solid var(--gold);
+  border-radius: 25px;
+}
+
+.mystery-explanation {
+  max-width: 700px;
+  margin: 12px auto 0;
+  font-size: 14px;
+  color: #53647d;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 25px 0 42px;
+}
+
+.choice-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 25px 19px;
+  background: white;
+  border: 1px solid #eadba9;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.choice-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 34px #082b7020;
+}
+
+.choice-icon {
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  color: var(--gold-light);
+  background: var(--blue);
+  border: 2px solid var(--gold);
+  font-size: 29px;
+  margin-bottom: 15px;
+}
+
+.choice-card h3 {
+  color: var(--blue);
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 0 0 10px;
+}
+
+.choice-card p {
+  margin: 0 0 20px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.gold-button, .outline-button {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.gold-button {
+  background: var(--blue);
+  color: white;
+}
+
+.gold-button:hover {
+  background: var(--gold);
+  color: var(--blue-dark);
+  transform: translateY(-2px);
+}
+
+.outline-button {
+  background: white;
+  color: var(--blue);
+}
+
+.outline-button:hover {
+  background: var(--gold-light);
+}
+
+.daily-mystery {
+  padding: 27px;
+  margin-bottom: 35px;
+  border: 1px solid #e5d29a;
+  border-radius: 20px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.daily-mystery h3 {
+  color: var(--blue);
+  text-align: center;
+  margin-top: 0;
+}
+
+.mystery-name {
+  text-align: center;
+  color: #90680c;
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.mystery-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+  counter-reset: decades;
+}
+
+.mystery-list li {
+  counter-increment: decades;
+  position: relative;
+  padding: 13px 14px 13px 45px;
+  border-radius: 12px;
+  background: #f4f7ff;
+  border-left: 3px solid var(--gold);
+  font-size: 14px;
+}
+
+.mystery-list li::before {
+  content: counter(decades);
+  position: absolute;
+  left: 13px;
+  top: 12px;
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  color: white;
+  background: var(--blue);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+.prayer-guide {
+  background: #fffaf0;
+  border: 1px solid #e9d8a1;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 22px;
+}
+
+.prayer-guide h4 {
+  margin: 0 0 10px;
+  color: var(--blue);
+}
+
+.prayer-guide p { margin: 8px 0; }
+
+.prayer-guide .leader {
+  font-weight: bold;
+  color: #8a6614;
+}
+
+.prayer-guide .people {
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.prayer-guide .muted {
+  color: #637087;
+  font-size: 13px;
+}
+
+.action-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.progress-note {
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 13px;
+}
+
+.video-container {
+  display: none;
+  width: min(1000px, calc(100% - 32px));
+  margin: 30px auto 50px;
+  padding: 25px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e9d8a1;
+  box-shadow: var(--shadow);
+}
+
+.video-container.visible {
+  display: block;
+  animation: fadeIn .35s ease;
+}
+
+.video-heading {
+  text-align: center;
+  color: var(--blue);
+  margin: 8px 0;
+}
+
+.video-description {
+  text-align: center;
+  color: #5b6b82;
+}
+
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 14px;
+  background: #07152e;
+  display: block;
+  margin: 20px 0;
+}
+
+.video-link {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.video-link a { color: var(--blue); }
+
+.footer {
+  padding: 36px 20px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(140deg, var(--blue-dark), var(--blue));
+  border-top: 4px solid var(--gold);
+}
+
+.footer-emblem {
+  color: var(--gold-light);
+  font-size: 34px;
+}
+
+.footer h3 {
+  color: var(--gold-light);
+  margin: 4px 0;
+}
+
+.footer p {
+  max-width: 650px;
+  margin: 8px auto;
+  font-size: 14px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.footer-nav a {
+  color: #fff1be;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-nav a:hover { text-decoration: underline; }
+
+.copyright {
+  padding-top: 16px;
+  margin-top: 20px !important;
+  border-top: 1px solid #ffffff35;
+  font-size: 12px !important;
+}
+
+.hidden { display: none !important; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 760px) {
+  .header-inner { flex-wrap: wrap; }
+  .menu-button { display: inline-block; }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 5px 20px 15px;
+  }
+
+  .main-nav.open { display: flex; }
+
+  .main-nav a { text-align: center; }
+
+  .choice-grid { grid-template-columns: 1fr; }
+
+  .choice-card { padding: 22px; }
+
+  .mystery-list { grid-template-columns: 1fr; }
+
+  .hero { padding: 45px 17px; }
+
+  .hero p { font-size: 15px; }
+
+  .daily-mystery, .video-container { padding: 19px; }
+}
+
+@media (max-width: 390px) {
+  .brand p { font-size: 10px; }
+  .marian-emblem { width: 44px; height: 44px; font-size: 24px; }
+  .language-button, .menu-button { padding: 7px 9px; font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="marian-emblem" aria-hidden="true">✧</div>
+      <div>
+        <h1 data-en="Mary Mediatrix of All Grace"
+            data-tl="Maria Tagapamagitan ng Lahat ng Biyaya">
+          Mary Mediatrix of All Grace
+        </h1>
+        <p>MONTEFARO GROUP · IMUS CHAPTER</p>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="language-button" id="languageToggle"
+              type="button" aria-label="Switch language">
+        Tagalog
+      </button>
+      <button class="menu-button" id="menuToggle"
+              type="button" aria-expanded="false">
+        ☰ Menu
+      </button>
+    </div>
+  </div>
+
+  <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+    <a href="index.html" data-en="Home" data-tl="Tahanan">Home</a>
+    <a href="rosary.html" class="active"
+       aria-current="page" data-en="Holy Rosary" data-tl="Banal na Rosaryo">Holy Rosary</a>
+    <a href="novena.html" data-en="Novena" data-tl="Nobena">Novena</a>
+    <a href="gawain.html" data-en="Activities" data-tl="Mga Gawain">Activities</a>
+    <a href="about.html" data-en="About Us" data-tl="Tungkol sa Amin">About Us</a>
+  </nav>
+</header>
+
+<div id="mainContainer">
+  <section class="hero">
+    <div class="hero-emblem" aria-hidden="true">✧</div>
+    <h2 data-en="The Holy Rosary"
+        data-tl="Ang Banal na Rosaryo">The Holy Rosary</h2>
+    <p data-en="With Mary, let us contemplate the life of Jesus Christ and grow closer to His Sacred Heart through prayer."
+       data-tl="Kasama si Maria, pagnilayan natin ang buhay ni Hesukristo at mas mapalapit sa Kanyang Banal na Puso sa pamamagitan ng panalangin.">
+      With Mary, let us contemplate the life of Jesus Christ and grow closer to His Sacred Heart through prayer.
+    </p>
+    <p class="verse"
+       data-en="“Pray the Rosary every day.” — Our Lady of Fatima"
+       data-tl="“Manalangin ng Rosaryo araw-araw.” — Mahal na Birhen ng Fatima">
+      “Pray the Rosary every day.” — Our Lady of Fatima
+    </p>
+  </section>
+
+  <main class="container">
+    <section class="date-card" aria-live="polite">
+      <div class="date" id="currentDate"></div>
+      <div id="todayMystery" class="mystery-label"></div>
+      <p class="mystery-explanation" id="mysteryExplanation"></p>
+    </section>
+
+    <section aria-labelledby="journeyHeading">
+      <h2 class="section-heading" id="journeyHeading"
+          data-en="Choose Your Rosary Journey"
+          data-tl="Piliin ang Iyong Paglalakbay sa Rosaryo">
+        Choose Your Rosary Journey
+      </h2>
+      <p class="section-subtitle"
+         data-en="Let us unite in prayer, wherever we may be."
+         data-tl="Magkaisa tayo sa panalangin, nasaan man tayo.">
+        Let us unite in prayer, wherever we may be.
+      </p>
+
+      <div class="choice-grid">
+        <article class="choice-card">
+          <div class="choice-icon" aria-hidden="true">☼</div>
+          <h3 data-en="Individual Rosary"
+              data-tl="Sariling Pagdarasal ng Rosaryo">Individual Rosary</h3>
+          <p data-en="Let us step into a quiet, immersive sanctuary for today’s personal Rosary journey."
+             data-tl="Pumasok tayo sa isang tahimik na lugar ng panalangin para sa ating personal na pagdarasal ng Rosaryo ngayong araw.">
+            Let us step into a quiet, immersive sanctuary for today’s personal Rosary journey.
+          </p>
+          <a class="gold-button" href="individualrosary.html"
+             data-en="Pray Individually" data-tl="Magdasal nang Sarili">
+            Pray Individually
+          </a>
+        </article>
+
+        <article class="choice-card">
+          <div class="choice-icon" aria-hidden="true">♧</div>
+          <h3 data-en="Community Rosary"
+              data-tl="Sama-samang Rosaryo">Community Rosary</h3>
+          <p data-en="Let us gather our hearts and voices together in a shared sacred space for today's community Rosary journey."
+             data-tl="Pagsamahin natin ang ating mga puso at tinig sa isang banal na pagtitipon para sa sama-samang pagdarasal ng Rosaryo ngayong araw.">
+            Let us gather our hearts and voices together in a shared sacred space for today's community Rosary journey.
+          </p>
+          <a class="gold-button" href="grouprosary.html"
+             data-en="Pray Together" data-tl="Magdasal nang Sama-sama">
+            Pray Together
+          </a>
+        </article>
+
+        <article class="choice-card">
+          <div class="choice-icon" aria-hidden="true">▷</div>
+          <h3 data-en="Guided Video Rosary"
+              data-tl="Rosaryo sa Gabay ng Video">Guided Video Rosary</h3>
+          <p data-en="Tune your heart and mind as we watch, listen, and pray today's beautifully guided video Rosary."
+             data-tl="Ihanda ang iyong puso at isipan habang nanonood, nakikinig, at nagdarasal sa gabay na video ng Rosaryo ngayong araw.">
+            Tune your heart and mind as we watch, listen, and pray today's beautifully guided video Rosary.
+          </p>
+          <button class="gold-button" id="openVideo"
+                  type="button" data-en="Watch & Pray" data-tl="Manood at Magdasal">
+            Watch &amp; Pray
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <section class="daily-mystery" aria-labelledby="mysteryHeading">
+      <h3 id="mysteryHeading"
+          data-en="Today's Five Rosary Mysteries"
+          data-tl="Limang Misteryo ng Rosaryo Ngayong Araw">
+        Today's Five Rosary Mysteries
+      </h3>
+      <div class="mystery-name" id="mysteryName"></div>
+      <p class="section-subtitle" id="mysteryIntro"></p>
+      <ol class="mystery-list" id="mysteryList"></ol>
+
+      <div class="prayer-guide">
+        <h4 data-en="Opening Prayer Guide"
+            data-tl="Gabay sa Panimulang Panalangin">
+          Opening Prayer Guide
+        </h4>
+
+        <p class="leader" data-en="Leader: In the name of the Father, and of the Son, and of the Holy Spirit."
+           data-tl="Namumuno: Sa ngalan ng Ama, at ng Anak, at ng Espiritu Santo.">
+          Leader: In the name of the Father, and of the Son, and of the Holy Spirit.
+        </p>
+        <p class="people" data-en="All: Amen."
+           data-tl="Lahat: Amen.">All: Amen.</p>
+
+        <p class="leader" data-en="Leader: I believe in God, the Father almighty, Creator of heaven and earth."
+           data-tl="Namumuno: Sumasampalataya ako sa Diyos Amang makapangyarihan sa lahat, na may gawa ng langit at lupa.">
+          Leader: I believe in God, the Father almighty, Creator of heaven and earth.
+        </p>
+        <p class="people" data-en="All: I believe in Jesus Christ, His only Son, our Lord..."
+           data-tl="Lahat: Sumasampalataya ako kay Hesukristo, iisang Anak ng Diyos, Panginoon natin...">
+          All: I believe in Jesus Christ, His only Son, our Lord...
+        </p>
+
+        <p class="muted"
+           data-en="Continue with the complete Apostles' Creed, one Our Father, three Hail Marys, and one Glory Be before the five decades."
+           data-tl="Ipagpatuloy ang buong Sumasampalataya, isang Ama Namin, tatlong Aba Ginoong Maria, at isang Luwalhati bago simulan ang limang dekada.">
+          Continue with the complete Apostles' Creed, one Our Father, three Hail Marys, and one Glory Be before the five decades.
+        </p>
+      </div>
+
+      <div class="action-row">
+        <a href="individual-rosary.html" class="gold-button"
+           data-en="Open Full Rosary Guide"
+           data-tl="Buksan ang Buong Gabay sa Rosaryo">
+          Open Full Rosary Guide
+        </a>
+        <a href="group-rosary.html" class="outline-button"
+           data-en="Community Prayer"
+           data-tl="Sama-samang Panalangin">
+          Community Prayer
+        </a>
+      </div>
+      <p class="progress-note"
+         data-en="The mystery schedule follows the traditional weekly Rosary cycle."
+         data-tl="Sinusunod ng iskedyul ng mga misteryo ang tradisyonal na lingguhang siklo ng Rosaryo.">
+        The mystery schedule follows the traditional weekly Rosary cycle.
+      </p>
+    </section>
+  </main>
+</div>
+
+<!-- Video view replaces the main page while open -->
+<section class="video-container" id="videoContainer"
+         aria-labelledby="videoHeading" aria-hidden="true">
+  <button class="gold-button" id="backButton" type="button">
+    ← <span data-en="Back to Rosary" data-tl="Bumalik sa Rosaryo">Back to Rosary</span>
+  </button>
+
+  <h2 class="video-heading" id="videoHeading"
+      data-en="Today's Guided Video Rosary"
+      data-tl="Gabay na Video ng Rosaryo Ngayong Araw">
+    Today's Guided Video Rosary
+  </h2>
+  <p class="video-description" id="videoMysteryLabel"></p>
+  <p class="video-description"
+     data-en="Pray peacefully and reflect on each mystery with Mary."
+     data-tl="Manalangin nang mapayapa at pagnilayan ang bawat misteryo kasama si Maria.">
+    Pray peacefully and reflect on each mystery with Mary.
+  </p>
+
+  <iframe class="video-frame" id="rosaryVideo"
+          title="Guided Rosary video"
+          src="about:blank"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+  </iframe>
+
+  <p class="video-link">
+    <a id="youtubeLink" href="#" target="_blank"
+       rel="noopener noreferrer">
+      Open video on YouTube
+    </a>
+  </p>
+  <div class="action-row">
+    <a href="rosary.html" class="outline-button"
+       data-en="Open Rosary Page"
+       data-tl="Buksan ang Pahina ng Rosaryo">
+      Open Rosary Page
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-emblem" aria-hidden="true">✧</div>
+  <h3 data-en="Mary Mediatrix of All Grace"
+      data-tl="Maria Tagapamagitan ng Lahat ng Biyaya">
+    Mary Mediatrix of All Grace
+  </h3>
+  <p><strong>Montefaro Group — Imus Chapter</strong></p>
+  <p data-en="Through Mary to Jesus. United in faith, hope, charity, and prayer."
+     data-tl="Sa pamamagitan ni Maria, patungo kay Hesus. Nagkakaisa sa pananampalataya, pag-asa, pag-ibig, at panalangin.">
+    Through Mary to Jesus. United in faith, hope, charity, and prayer.
+  </p>
+
+  <nav class="footer-nav" aria-label="Footer navigation">
+    <a href="index.html" data-en="Home" data-tl="Tahanan">Home</a>
+    <a href="rosary.html" data-en="Rosary" data-tl="Rosaryo">Rosary</a>
+    <a href="novena.html" data-en="Novena" data-tl="Nobena">Novena</a>
+    <a href="gawain.html" data-en="Activities" data-tl="Mga Gawain">Activities</a>
+    <a href="about.html" data-en="About" data-tl="Tungkol">About</a>
+  </nav>
+
+  <p class="copyright">
+    © <span id="year"></span> Montefaro Group Imus Chapter.
+    <span data-en="All rights reserved."
+          data-tl="Nakalaan ang lahat ng karapatan.">All rights reserved.</span>
+  </p>
+</footer>
+
+<script>
+"use strict";
+
+/* ==========================================
+   ROSARY MYSTERY SCHEDULE
+   JavaScript Date.getDay():
+   Sunday = 0, Monday = 1, ... Saturday = 6
+========================================== */
+
+const mysteries = {
+  joyful: {
+    video: "https://www.youtube.com/watch?v=DW9Z1sgi0V0",
+    title: {
+      en: "Joyful Mysteries",
+      tl: "Mga Misteryo ng Tuwa"
+    },
+    intro: {
+      en: "We contemplate the joy of Christ's coming into the world.",
+      tl: "Pagnilayan natin ang kagalakan ng pagdating ni Kristo sa mundo."
+    },
+    decades: [
+      { en: "The Annunciation", tl: "Ang Pagbati ng Anghel kay Maria" },
+      { en: "The Visitation", tl: "Ang Pagdalaw ni Maria kay Elisabet" },
+      { en: "The Nativity of Jesus", tl: "Ang Pagsilang kay Hesus" },
+      { en: "The Presentation of Jesus in the Temple", tl: "Ang Paghahandog kay Hesus sa Templo" },
+      { en: "The Finding of Jesus in the Temple", tl: "Ang Pagkakatagpo kay Hesus sa Templo" }
+    ]
+  },
+
+  luminous: {
+    video: "https://www.youtube.com/watch?v=ix9-czuZk7Y",
+    title: {
+      en: "Luminous Mysteries",
+      tl: "Mga Misteryo ng Liwanag"
+    },
+    intro: {
+      en: "We contemplate the public ministry and divine light of Jesus.",
+      tl: "Pagnilayan natin ang pampublikong ministeryo at banal na liwanag ni Hesus."
+    },
+    decades: [
+      { en: "The Baptism of Jesus in the Jordan", tl: "Ang Pagbibinyag kay Hesus sa Ilog Jordan" },
+      { en: "The Wedding at Cana", tl: "Ang Kasalan sa Cana" },
+      { en: "The Proclamation of the Kingdom of God", tl: "Ang Pagpapahayag ng Kaharian ng Diyos" },
+      { en: "The Transfiguration", tl: "Ang Pagbabagong-anyo ni Hesus" },
+      { en: "The Institution of the Eucharist", tl: "Ang Pagtatatag ng Eukaristiya" }
+    ]
+  },
+
+  sorrowful: {
+    video: "https://www.youtube.com/watch?v=AK98CN8jH14",
+    title: {
+      en: "Sorrowful Mysteries",
+      tl: "Mga Misteryo ng Hapis"
+    },
+    intro: {
+      en: "We meditate on the Passion and suffering of our Lord Jesus Christ.",
+      tl: "Pagnilayan natin ang pagpapakasakit at paghihirap ng ating Panginoong Hesukristo."
+    },
+    decades: [
+      { en: "The Agony in the Garden", tl: "Ang Paghihirap ni Hesus sa Halamanan" },
+      { en: "The Scourging at the Pillar", tl: "Ang Pagpapahirap kay Hesus sa Haliging Bato" },
+      { en: "The Crowning with Thorns", tl: "Ang Pagpuputong ng Koronang Tinik" },
+      { en: "The Carrying of the Cross", tl: "Ang Pagpapasan ni Hesus sa Krus" },
+      { en: "The Crucifixion and Death of Jesus", tl: "Ang Pagkapako at Pagkamatay ni Hesus sa Krus" }
+    ]
+  },
+
+  glorious: {
+    video: "https://www.youtube.com/watch?v=lfuipgdlLLE",
+    title: {
+      en: "Glorious Mysteries",
+      tl: "Mga Misteryo ng Luwalhati"
+    },
+    intro: {
+      en: "We contemplate the Resurrection and glory of Jesus and Mary.",
+      tl: "Pagnilayan natin ang Muling Pagkabuhay at kaluwalhatian nina Hesus at Maria."
+    },
+    decades: [
+      { en: "The Resurrection of Jesus", tl: "Ang Muling Pagkabuhay ni Hesus" },
+      { en: "The Ascension of Jesus into Heaven", tl: "Ang Pag-akyat ni Hesus sa Langit" },
+      { en: "The Descent of the Holy Spirit", tl: "Ang Pagbaba ng Espiritu Santo" },
+      { en: "The Assumption of Mary into Heaven", tl: "Ang Pag-aakyat kay Maria sa Langit" },
+      { en: "The Coronation of Mary as Queen of Heaven and Earth", tl: "Ang Pagpuputong kay Maria bilang Reyna ng Langit at Lupa" }
+    ]
+  }
+};
+
+const weeklySchedule = {
+  0: "glorious",  // Sunday
+  1: "joyful",    // Monday
+  2: "sorrowful", // Tuesday
+  3: "glorious",  // Wednesday
+  4: "luminous",  // Thursday
+  5: "sorrowful", // Friday
+  6: "joyful"     // Saturday
+};
+
+const translations = {
+  en: {
+    datePrefix: "Today's date: ",
+    todayPrefix: "Today's mystery: ",
+    opening: "The Sign of the Cross",
+    openYoutube: "Open video on YouTube",
+    unavailable: "Video unavailable"
+  },
+  tl: {
+    datePrefix: "Petsa ngayon: ",
+    todayPrefix: "Misteryo ngayong araw: ",
+    opening: "Tanda ng Krus",
+    openYoutube: "Buksan ang video sa YouTube",
+    unavailable: "Hindi available ang video"
+  }
+};
+
+let language = localStorage.getItem("rosaryLanguage") || "en";
+if (language !== "en" && language !== "tl") language = "en";
+
+const mainContainer = document.getElementById("mainContainer");
+const videoContainer = document.getElementById("videoContainer");
+const videoFrame = document.getElementById("rosaryVideo");
+const youtubeLink = document.getElementById("youtubeLink");
+
+function getTodayMystery() {
+  return weeklySchedule[new Date().getDay()];
+}
+
+function getTodayDateText(lang) {
+  return new Intl.DateTimeFormat(
+    lang === "tl" ? "fil-PH" : "en-PH",
+    {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    }
+  ).format(new Date());
+}
+
+function renderMystery() {
+  const key = getTodayMystery();
+  const mystery = mysteries[key];
+
+  document.getElementById("currentDate").textContent =
+    translations[language].datePrefix + getTodayDateText(language);
+
+  document.getElementById("todayMystery").textContent =
+    translations[language].todayPrefix + mystery.title[language];
+
+  document.getElementById("mysteryName").textContent =
+    mystery.title[language];
+
+  document.getElementById("mysteryExplanation").textContent =
+    mystery.intro[language];
+
+  document.getElementById("mysteryIntro").textContent =
+    mystery.intro[language];
+
+  const list = document.getElementById("mysteryList");
+  list.replaceChildren();
+
+  mystery.decades.forEach((decade) => {
+    const item = document.createElement("li");
+    item.textContent = decade[language];
+    list.appendChild(item);
+  });
+
+  document.getElementById("videoMysteryLabel").textContent =
+    mystery.title[language];
+}
+
+function applyLanguage() {
+  document.documentElement.lang = language;
+
+  document.querySelectorAll("[data-en][data-tl]").forEach((element) => {
+    const translated = element.dataset[language];
+    if (translated !== undefined) {
+      element.textContent = translated;
+    }
+  });
+
+  document.getElementById("languageToggle").textContent =
+    language === "en" ? "Tagalog" : "English";
+
+  youtubeLink.textContent = translations[language].openYoutube;
+
+  renderMystery();
+}
+
+document.getElementById("languageToggle").addEventListener("click", () => {
+  language = language === "en" ? "tl" : "en";
+
+  try {
+    localStorage.setItem("rosaryLanguage", language);
+  } catch (error) {
+    // Language switching still works when storage is unavailable.
+  }
+
+  applyLanguage();
+});
+
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+mainNav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+/* Video URLs are selected from the configured mystery data. */
+function openVideoView() {
+  const key = getTodayMystery();
+  const videoUrl = mysteries[key].video;
+  const videoId = new URL(videoUrl).searchParams.get("v");
+
+  if (!videoId) {
+    return;
+  }
+
+  youtubeLink.href = videoUrl;
+
+  // Replace the main view with the video view.
+  mainContainer.classList.add("hidden");
+  videoContainer.classList.add("visible");
+  videoContainer.setAttribute("aria-hidden", "false");
+
+  // Load the video only when the user requests it.
+  videoFrame.src =
+    "https://www.youtube-nocookie.com/embed/" +
+    encodeURIComponent(videoId);
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function closeVideoView() {
+  // Stop playback when leaving the video view.
+  videoFrame.src = "about:blank";
+
+  videoContainer.classList.remove("visible");
+  videoContainer.setAttribute("aria-hidden", "true");
+  mainContainer.classList.remove("hidden");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.getElementById("openVideo").addEventListener("click", openVideoView);
+document.getElementById("backButton").addEventListener("click", closeVideoView);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+applyLanguage();
+
+/* Refresh the displayed date and mystery if the page stays open overnight. */
+let lastDate = new Date().toDateString();
+
+setInterval(() => {
+  const currentDate = new Date().toDateString();
+
+  if (currentDate !== lastDate) {
+    lastDate = currentDate;
+    renderMystery();
+  }
+}, 60000);
+</script>
+
+</body>
+</html>
+```
