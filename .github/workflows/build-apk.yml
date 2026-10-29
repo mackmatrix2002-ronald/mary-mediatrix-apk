@@ -1,4 +1,4 @@
-name: Build Mary Mediatrix Android APK
+name: Build Mary Mediatrix APK
 
 on:
   workflow_dispatch:
@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -47,10 +46,9 @@ jobs:
             gawain.html
           do
             if [ ! -f "$file" ]; then
-              echo "Missing required file: $file"
+              echo "Missing file: $file"
               exit 1
             fi
-
             cp "$file" www/
           done
 
@@ -60,13 +58,13 @@ jobs:
             fi
           done
 
-      - name: Create Android project
+      - name: Add Android platform
         run: npx cap add android
 
-      - name: Sync website to Android
+      - name: Sync Android project
         run: npx cap sync android
 
-      - name: Build debug APK
+      - name: Build APK
         run: |
           cd android
           chmod +x gradlew
